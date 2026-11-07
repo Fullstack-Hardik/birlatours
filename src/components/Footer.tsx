@@ -19,11 +19,25 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#181614] text-stone-300 pt-16 pb-12 overflow-hidden border-t border-stone-800">
-      {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[300px] bg-[#f26b45]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+    <footer className="relative bg-[#121110] text-stone-300 pt-20 pb-12 overflow-hidden border-t border-stone-800/80">
+      {/* 3D Isometric / Cyber-Heritage Grid Background */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(242, 107, 69, 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(242, 107, 69, 0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
+          maskImage: 'radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%)'
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      {/* Subtle warm orange lighting prism */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-[#f26b45]/20 via-orange-600/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         {/* Top GST & Registration Trust Bar */}
         <div className="p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl mb-14 flex flex-col md:flex-row items-center justify-between gap-6">

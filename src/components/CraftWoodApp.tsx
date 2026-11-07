@@ -162,22 +162,32 @@ _Sent via Birla Tour & Travels Home Form_`;
         <div className="absolute bottom-1/3 left-10 w-[500px] h-[500px] bg-gradient-to-tr from-orange-200/20 via-stone-200/25 to-transparent rounded-full blur-3xl" />
       </div>
 
-      {/* HERO SECTION - Rock Solid Layout without Layout Shifts */}
+      {/* HERO SECTION - Enhanced with Elegant SVGs & Glass Finishing */}
       <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 px-4 sm:px-8 max-w-7xl mx-auto">
+        {/* Subtle Decorative Architectural SVG elements */}
+        <div className="absolute top-0 right-10 pointer-events-none opacity-20 hidden md:block">
+          <svg width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" stroke="#f26b45" strokeWidth="1.5" strokeDasharray="6 6" />
+            <circle cx="100" cy="100" r="60" stroke="#f26b45" strokeWidth="1" />
+            <path d="M100 10 L100 190 M10 100 L190 100" stroke="#f26b45" strokeWidth="0.8" strokeOpacity="0.6" />
+            <polygon points="100,20 120,80 180,100 120,120 100,180 80,120 20,100 80,80" fill="#f26b45" fillOpacity="0.06" stroke="#f26b45" strokeWidth="1" />
+          </svg>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Content Column */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-6 relative z-10">
             
             {/* Stable Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-stone-300/80 shadow-2xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-orange-500/25 shadow-[0_2px_15px_rgba(242,107,69,0.1)]">
               <span className="w-2 h-2 rounded-full bg-[#f26b45] animate-pulse" />
               <span className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-stone-800">
                 Haridwar &amp; Dehradun 24x7 Cab Service
               </span>
             </div>
 
-            {/* Clean, Stable, Non-Jittery Headline */}
+            {/* Clean, Stable Headline with Gold/Orange Accent */}
             <div className="space-y-1">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-stone-950 tracking-tight leading-[1.12]">
                 Birla Tour &amp; Travels
@@ -196,7 +206,7 @@ _Sent via Birla Tour & Travels Home Form_`;
               <button
                 type="button"
                 onClick={() => handleOpenBooking('General Tour / Cab Booking')}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md group"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_15px_-3px_rgba(16,185,129,0.4)] group active:scale-95"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Book Cab on WhatsApp</span>
@@ -204,7 +214,7 @@ _Sent via Birla Tour & Travels Home Form_`;
 
               <a
                 href="tel:+919917490721"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-stone-900 text-[#F5F2EF] text-xs font-bold uppercase tracking-wider hover:bg-stone-800 transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-stone-900 text-[#F5F2EF] text-xs font-bold uppercase tracking-wider hover:bg-stone-800 transition-all shadow-md active:scale-95"
               >
                 <Phone className="w-4 h-4 text-[#f26b45]" />
                 <span>Call 9917490721</span>
@@ -212,7 +222,7 @@ _Sent via Birla Tour & Travels Home Form_`;
 
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 text-xs font-bold uppercase tracking-wider transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/90 hover:bg-white text-stone-800 border border-stone-300 text-xs font-bold uppercase tracking-wider transition-all shadow-2xs hover:shadow-sm"
               >
                 <span>View Gallery</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-stone-500" />
@@ -499,17 +509,20 @@ _Sent via Birla Tour & Travels Home Form_`;
             </div>
           </div>
 
-          {/* Right Form: Submits directly to WhatsApp */}
-          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-stone-300/80 shadow-xs">
+          {/* Right Form: Neon Prism 3D Card submitting directly to WhatsApp */}
+          <div className="lg:col-span-7 relative rounded-3xl bg-stone-900/95 text-stone-100 p-6 sm:p-8 border border-orange-500/30 shadow-[0_20px_50px_-15px_rgba(242,107,69,0.35),0_0_25px_rgba(242,107,69,0.15)] overflow-hidden backdrop-blur-xl">
+            {/* Ambient Prism Top Bar */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#f26b45] to-transparent opacity-90" />
+            
             <div className="mb-6 space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#f26b45]/15 text-[#f26b45] border border-[#f26b45]/30 text-[10px] font-bold uppercase tracking-wider">
                 <MessageCircle className="w-3 h-3" />
                 <span>Instant WhatsApp Confirmation</span>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-stone-950">
+              <h3 className="text-2xl font-serif font-bold text-white tracking-tight">
                 Instant Cab &amp; Tour Enquiry
               </h3>
-              <p className="text-xs text-stone-600">
+              <p className="text-xs text-stone-400">
                 Submit trip details below to immediately open WhatsApp with your pre-formatted enquiry.
               </p>
             </div>
@@ -517,37 +530,37 @@ _Sent via Birla Tour & Travels Home Form_`;
             <form onSubmit={handleHomeFormSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">Full Name *</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Full Name *</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. Rahul Sharma"
                     value={homeForm.name}
                     onChange={(e) => setHomeForm({ ...homeForm, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">Mobile Number *</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Mobile Number *</label>
                   <input
                     type="tel"
                     required
                     placeholder="e.g. 9917490721"
                     value={homeForm.phone}
                     onChange={(e) => setHomeForm({ ...homeForm, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">Pickup Location *</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Pickup Location *</label>
                   <select
                     value={homeForm.pickup}
                     onChange={(e) => setHomeForm({ ...homeForm, pickup: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   >
                     <option value="Haridwar Railway Station">Haridwar Railway Station</option>
                     <option value="Dehradun Jolly Grant Airport">Dehradun Jolly Grant Airport</option>
@@ -560,32 +573,32 @@ _Sent via Birla Tour & Travels Home Form_`;
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">Destination *</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Destination *</label>
                   <input
                     type="text"
                     required
                     placeholder="Char Dham, Kedarnath, Mussoorie, etc."
                     value={homeForm.destination}
                     onChange={(e) => setHomeForm({ ...homeForm, destination: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold uppercase tracking-wider text-stone-700">Travel Date &amp; Passenger Count</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Travel Date &amp; Passenger Count</label>
                 <textarea
                   rows={2}
                   placeholder="e.g. Travel on 15th, 5 passengers in Innova Crysta..."
                   value={homeForm.details}
                   onChange={(e) => setHomeForm({ ...homeForm, details: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                  className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition shadow-md hover:shadow-lg"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_10px_25px_-5px_rgba(16,185,129,0.4)] active:scale-[0.99]"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Send via WhatsApp</span>

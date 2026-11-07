@@ -52,7 +52,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-50 bg-[#F5F2EF]/90 backdrop-blur-md border-b border-stone-300/50 transition-all duration-300">
+      <nav className="fixed inset-x-0 top-0 z-50 bg-[#F5F2EF]/85 backdrop-blur-xl border-b border-orange-500/15 shadow-[0_4px_30px_rgba(242,107,69,0.06)] transition-all duration-300">
+        {/* Subtle Prism Rainbow Line on top edge */}
+        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#f26b45] to-transparent opacity-75" />
+
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 h-20">
           
           {/* Brand Logo with User Uploaded Custom Logo - Increased Size */}
@@ -77,7 +80,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Links (Pill Bar with Icons) */}
-          <div className="hidden lg:flex items-center gap-1 p-1.5 rounded-full bg-[#EBE8E4] text-stone-800 border border-stone-300/50 shadow-xs">
+          <div className="hidden lg:flex items-center gap-1 p-1.5 rounded-full bg-white/70 backdrop-blur-md text-stone-800 border border-stone-300/60 shadow-xs">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               const IconComponent = link.icon;
@@ -87,8 +90,8 @@ const Navbar = () => {
                   href={link.href}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                     isActive
-                      ? 'bg-stone-950 text-[#F5F2EF] shadow-sm'
-                      : 'text-stone-700 hover:text-stone-950 hover:bg-stone-300/40'
+                      ? 'bg-stone-950 text-[#F5F2EF] shadow-[0_2px_10px_rgba(0,0,0,0.15)]'
+                      : 'text-stone-700 hover:text-stone-950 hover:bg-stone-200/50'
                   }`}
                 >
                   <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
@@ -102,7 +105,7 @@ const Navbar = () => {
           <div className="hidden sm:flex items-center gap-3">
             <a
               href="tel:+919917490721"
-              className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-full border border-stone-300 bg-white/80 text-xs font-mono font-bold text-stone-800 hover:bg-white transition shadow-2xs"
+              className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-sm text-xs font-mono font-bold text-stone-800 hover:bg-white hover:border-[#f26b45]/40 transition shadow-2xs"
             >
               <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
               <span>9917490721</span>
@@ -111,7 +114,7 @@ const Navbar = () => {
               href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20book%20a%20cab"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold uppercase tracking-wider hover:bg-emerald-700 transition shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white text-xs font-semibold uppercase tracking-wider transition shadow-[0_4px_15px_-3px_rgba(16,185,129,0.4)]"
             >
               <MessageCircle className="w-3.5 h-3.5" />
               <span>Book Cab</span>
@@ -121,7 +124,7 @@ const Navbar = () => {
           {/* Mobile Hamburger Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex items-center justify-center w-11 h-11 rounded-2xl bg-white text-stone-900 border border-stone-300 shadow-xs active:scale-95 transition-transform"
+            className="lg:hidden flex items-center justify-center w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-sm text-stone-900 border border-stone-300/80 shadow-xs active:scale-95 transition-transform"
             aria-label="Toggle Navigation"
           >
             {isOpen ? <X className="w-5 h-5 text-stone-900" /> : <Menu className="w-5 h-5 text-stone-900" />}

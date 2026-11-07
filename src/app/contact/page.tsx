@@ -159,13 +159,20 @@ _Sent via Birla Tour & Travels Contact Form_`;
 
           </div>
 
-          {/* Right Form Panel: Fills data and redirects to WhatsApp */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-stone-300/80 shadow-xs">
+          {/* Right Form Panel: Neon Prism 3D Form Card */}
+          <div className="lg:col-span-7 relative rounded-3xl bg-stone-900/95 text-stone-100 p-8 sm:p-10 border border-orange-500/30 shadow-[0_20px_50px_-15px_rgba(242,107,69,0.35),0_0_25px_rgba(242,107,69,0.15)] overflow-hidden backdrop-blur-xl">
+            {/* Ambient Prism Top Bar */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#f26b45] to-transparent opacity-90" />
+            
             <div className="mb-6 space-y-1">
-              <h2 className="text-2xl font-serif font-bold text-stone-950">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#f26b45]/15 text-[#f26b45] border border-[#f26b45]/30 text-[10px] font-bold uppercase tracking-wider mb-2">
+                <Send className="w-3 h-3" />
+                <span>Instant WhatsApp Booking</span>
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-white tracking-tight">
                 Book a Cab / Send Enquiry
               </h2>
-              <p className="text-xs text-stone-600">
+              <p className="text-xs text-stone-400">
                 Fill this quick form. Upon submission, it will automatically open your WhatsApp with your details pre-formatted.
               </p>
             </div>
@@ -173,7 +180,7 @@ _Sent via Birla Tour & Travels Contact Form_`;
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
                     Full Name *
                   </label>
                   <input
@@ -183,12 +190,12 @@ _Sent via Birla Tour & Travels Contact Form_`;
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Amit Sharma"
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
                     Phone Number *
                   </label>
                   <input
@@ -198,15 +205,15 @@ _Sent via Birla Tour & Travels Contact Form_`;
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="e.g. 9917490721"
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
-                    Email Address (Optional)
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -214,12 +221,12 @@ _Sent via Birla Tour & Travels Contact Form_`;
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="e.g. amit@gmail.com"
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
                     Travel Date
                   </label>
                   <input
@@ -227,21 +234,21 @@ _Sent via Birla Tour & Travels Contact Form_`;
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
                     Pickup Location *
                   </label>
                   <select
                     name="pickup"
                     value={formData.pickup}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   >
                     <option value="Haridwar Railway Station">Haridwar Railway Station</option>
                     <option value="Dehradun Airport (Jolly Grant)">Dehradun Airport (Jolly Grant)</option>
@@ -253,7 +260,7 @@ _Sent via Birla Tour & Travels Contact Form_`;
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
                     Destination / Tour Route *
                   </label>
                   <input
@@ -263,13 +270,13 @@ _Sent via Birla Tour & Travels Contact Form_`;
                     value={formData.destination}
                     onChange={handleChange}
                     placeholder="e.g. Kedarnath & Badrinath, Mussoorie"
-                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
                   Requirements / Notes
                 </label>
                 <textarea
@@ -278,15 +285,15 @@ _Sent via Birla Tour & Travels Contact Form_`;
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Number of passengers, luggage, one-way or round-trip..."
-                  className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                  className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-stone-900 text-[#F5F2EF] hover:bg-stone-800 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition shadow-md"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_10px_25px_-5px_rgba(16,185,129,0.4)] active:scale-[0.99]"
               >
-                <Send className="w-4 h-4 text-[#f26b45]" />
+                <MessageCircle className="w-4 h-4" />
                 <span>Submit &amp; Open in WhatsApp</span>
               </button>
             </form>
