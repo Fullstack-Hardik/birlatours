@@ -130,109 +130,112 @@ const Navbar = () => {
       </nav>
 
       {/* Modern Slide-over Sidebar for Mobile View with Backdrop */}
-      {isOpen && (
+      <div 
+        className={`fixed inset-0 z-50 lg:hidden bg-stone-950/60 backdrop-blur-xs transition-opacity duration-300 ease-in-out ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden={!isOpen}
+      >
+        {/* Slide-in Drawer Container */}
         <div 
-          className="fixed inset-0 z-50 lg:hidden bg-stone-950/60 backdrop-blur-xs transition-opacity duration-300 animate-fadeIn"
-          onClick={() => setIsOpen(false)}
+          className={`fixed inset-y-0 right-0 w-[85%] max-w-sm bg-[#F5F2EF] h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto transform transition-transform duration-300 ease-out border-l border-stone-300 ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
         >
-          {/* Slide-in Drawer Container */}
-          <div 
-            className="fixed inset-y-0 right-0 w-[85%] max-w-sm bg-[#F5F2EF] h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto transform transition-transform duration-300 ease-out border-l border-stone-300"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Drawer Header */}
-            <div>
-              <div className="flex items-center justify-between pb-6 border-b border-stone-300/80">
-                <div className="flex items-center gap-3">
-                  <div className="relative w-12 h-10">
-                    <Image
-                      src="/logo.png"
-                      alt="Birla Tour & Travels Logo"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <span className="font-serif font-bold text-base text-stone-950 block leading-tight">
-                      BIRLA TOURS
-                    </span>
-                    <span className="text-[10px] font-mono text-[#f26b45] font-semibold uppercase">
-                      Haridwar · Roorkee · Dehradun
-                    </span>
-                  </div>
+          {/* Drawer Header */}
+          <div>
+            <div className="flex items-center justify-between pb-6 border-b border-stone-300/80">
+              <div className="flex items-center gap-3">
+                <div className="relative w-12 h-10">
+                  <Image
+                    src="/logo.png"
+                    alt="Birla Tour & Travels Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="w-9 h-9 rounded-full bg-stone-200 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition"
-                  aria-label="Close Menu"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+                <div>
+                  <span className="font-serif font-bold text-base text-stone-950 block leading-tight">
+                    BIRLA TOURS
+                  </span>
+                  <span className="text-[10px] font-mono text-[#f26b45] font-semibold uppercase">
+                    Haridwar · Roorkee · Dehradun
+                  </span>
+                </div>
               </div>
 
-              {/* Navigation Items */}
-              <div className="py-6 space-y-1.5">
-                {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
-                  const IconComponent = link.icon;
-                  return (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`flex items-center justify-between p-3.5 rounded-2xl text-sm font-semibold transition-all ${
-                        isActive
-                          ? 'bg-stone-950 text-white shadow-sm'
-                          : 'text-stone-800 hover:bg-stone-200/70'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <IconComponent className={`w-4 h-4 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
-                        <span>{link.name}</span>
-                      </div>
-                      <ChevronRight className={`w-4 h-4 ${isActive ? 'text-[#f26b45]' : 'text-stone-400'}`} />
-                    </Link>
-                  );
-                })}
-              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="w-9 h-9 rounded-full bg-stone-200 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition active:scale-95"
+                aria-label="Close Menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
-            {/* Bottom Actions & Office Info */}
-            <div className="space-y-4 pt-6 border-t border-stone-300">
-              <div className="p-3.5 rounded-2xl bg-white border border-stone-300 text-xs text-stone-700 space-y-1.5">
-                <div className="flex items-center gap-2 font-bold text-stone-900">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>GSTIN: 05AUAPK2728D1Z5</span>
-                </div>
-                <p className="text-[11px] text-stone-500">
-                  Vill. Asaf Nagar, NH-334, Roorkee, Haridwar
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2">
-                <a
-                  href="tel:+919917490721"
-                  className="flex items-center justify-center gap-1.5 py-3 rounded-full bg-stone-900 text-white text-xs font-bold uppercase tracking-wider"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
-                  <span>Call Us</span>
-                </a>
-                <a
-                  href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20inquire%20about%20cab%20booking"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-1.5 py-3 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
+            {/* Navigation Items */}
+            <div className="py-6 space-y-1.5">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                const IconComponent = link.icon;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center justify-between p-3.5 rounded-2xl text-sm font-semibold transition-all ${
+                      isActive
+                        ? 'bg-stone-950 text-white shadow-sm'
+                        : 'text-stone-800 hover:bg-stone-200/70'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <IconComponent className={`w-4 h-4 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
+                      <span>{link.name}</span>
+                    </div>
+                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-[#f26b45]' : 'text-stone-400'}`} />
+                  </Link>
+                );
+              })}
             </div>
-
           </div>
+
+          {/* Bottom Actions & Office Info */}
+          <div className="space-y-4 pt-6 border-t border-stone-300">
+            <div className="p-3.5 rounded-2xl bg-white border border-stone-300 text-xs text-stone-700 space-y-1.5">
+              <div className="flex items-center gap-2 font-bold text-stone-900">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>GSTIN: 05AUAPK2728D1Z5</span>
+              </div>
+              <p className="text-[11px] text-stone-500">
+                Vill. Asaf Nagar, NH-334, Roorkee, Haridwar
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="tel:+919917490721"
+                className="flex items-center justify-center gap-1.5 py-3 rounded-full bg-stone-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-stone-800 transition active:scale-95"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
+                <span>Call Us</span>
+              </a>
+              <a
+                href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20inquire%20about%20cab%20booking"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-1.5 py-3 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider hover:bg-emerald-700 transition active:scale-95"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
         </div>
-      )}
+      </div>
     </>
   );
 };

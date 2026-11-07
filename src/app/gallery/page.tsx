@@ -26,11 +26,7 @@ export default function GalleryPage() {
   const { scrollY } = useScroll();
 
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-[#F5F2EF] text-stone-900 selection:bg-stone-200 selection:text-stone-900">
-      {/* Background glowing currents */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <ChromaCurrent opacity={0.3} dotSize={1.8} gap={32} glowColor="rgba(242, 107, 69, 0.35)" />
-      </div>
+    <div ref={containerRef} className="relative min-h-screen bg-transparent text-stone-900 selection:bg-stone-200 selection:text-stone-900">
 
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-40 bg-[#F5F2EF]/90 backdrop-blur-md border-b border-stone-300/60 px-4 sm:px-8 py-4">

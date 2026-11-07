@@ -155,13 +155,12 @@ _Sent via Birla Tour & Travels Home Form_`;
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#F5F2EF] text-stone-900 font-sans selection:bg-stone-200 selection:text-stone-900 overflow-x-hidden">
+    <div className="relative min-h-screen bg-transparent text-stone-900 font-sans selection:bg-stone-200 selection:text-stone-900 overflow-x-hidden">
       
-      {/* Background Chroma Currents */}
+      {/* Background Chroma Currents Ambient Glows */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-orange-300/15 via-amber-100/20 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 left-10 w-[500px] h-[500px] bg-gradient-to-tr from-orange-200/15 via-stone-200/20 to-transparent rounded-full blur-3xl" />
-        <ChromaCurrent opacity={0.35} dotSize={1.8} gap={32} glowColor="rgba(242, 107, 69, 0.35)" />
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-orange-300/20 via-amber-100/25 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 left-10 w-[500px] h-[500px] bg-gradient-to-tr from-orange-200/20 via-stone-200/25 to-transparent rounded-full blur-3xl" />
       </div>
 
       {/* HERO SECTION - Rock Solid Layout without Layout Shifts */}

@@ -114,10 +114,7 @@ export default function BlogsPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#F5F2EF] text-stone-900 selection:bg-stone-200 selection:text-stone-900">
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <ChromaCurrent opacity={0.3} dotSize={1.8} gap={32} glowColor="rgba(242, 107, 69, 0.35)" />
-      </div>
+    <div className="relative min-h-screen bg-transparent text-stone-900 selection:bg-stone-200 selection:text-stone-900">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
         

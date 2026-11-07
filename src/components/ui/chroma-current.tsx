@@ -66,17 +66,17 @@ export default function ChromaCurrent({
 
           // Soft dot base
           ctx.beginPath()
-          ctx.arc(x, y, dotSize * (0.8 + intensity * 0.9), 0, Math.PI * 2)
+          ctx.arc(x, y, dotSize * (0.8 + intensity * 1.1), 0, Math.PI * 2)
 
-          if (intensity > 0.62) {
+          if (intensity > 0.55) {
             // Bright glowing flowing head
-            const glow = (intensity - 0.62) / 0.38
-            ctx.fillStyle = `rgba(242, 107, 69, ${0.15 + glow * 0.55})`
+            const glow = (intensity - 0.55) / 0.45
+            ctx.fillStyle = `rgba(242, 107, 69, ${0.45 + glow * 0.5})`
             ctx.shadowColor = glowColor
-            ctx.shadowBlur = 10 * glow
+            ctx.shadowBlur = 14 * glow
           } else {
-            // Ambient faint dots
-            ctx.fillStyle = `rgba(215, 205, 195, ${0.12 + intensity * 0.2})`
+            // Ambient dots
+            ctx.fillStyle = `rgba(180, 160, 145, ${0.3 + intensity * 0.3})`
             ctx.shadowBlur = 0
           }
           ctx.fill()

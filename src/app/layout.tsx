@@ -151,10 +151,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#F5F2EF] text-stone-900 antialiased selection:bg-stone-200 selection:text-stone-900 min-h-screen flex flex-col relative">
+      <body className="text-stone-900 antialiased selection:bg-stone-200 selection:text-stone-900 min-h-screen flex flex-col relative bg-[#F5F2EF]">
         {/* Restored Authentic Website Background Texture */}
         <div 
-          className="fixed inset-0 pointer-events-none -z-20 bg-repeat opacity-[0.22] mix-blend-multiply"
+          className="fixed inset-0 pointer-events-none z-0 bg-repeat opacity-[0.25] mix-blend-multiply"
           style={{
             backgroundImage: "url('/images/bg-texture.jpg')",
             backgroundSize: "600px auto",
@@ -162,14 +162,14 @@ export default function RootLayout({
           aria-hidden="true"
         />
 
-        {/* Global Ambient Fluid Dots & Subtle Currents */}
-        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-          <ChromaCurrent opacity={0.35} dotSize={1.8} gap={32} glowColor="rgba(242, 107, 69, 0.35)" />
+        {/* Global Ambient Fluid Currents & Glowing Dots */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+          <ChromaCurrent opacity={0.8} dotSize={2.2} gap={28} glowColor="rgba(242, 107, 69, 0.7)" />
         </div>
         
         <Navbar />
         
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-20 relative z-10">
           <TopAnnouncementBanner />
           {children}
         </main>
