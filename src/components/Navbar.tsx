@@ -32,22 +32,22 @@ const Navbar = () => {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 bg-[#F5F2EF]/85 backdrop-blur-md border-b border-stone-300/50 transition-all duration-300">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 h-20">
-        {/* Brand Logo with User Uploaded Custom Logo */}
-        <Link href="/" className="inline-flex items-center gap-3 group">
-          <div className="relative w-12 h-10 sm:w-14 sm:h-11">
+        {/* Brand Logo with User Uploaded Custom Logo - Increased Size */}
+        <Link href="/" className="inline-flex items-center gap-3.5 group">
+          <div className="relative w-16 h-14 sm:w-20 sm:h-16 shrink-0">
             <Image
               src="/logo.png"
               alt="Birla Tour & Travels Logo"
               fill
               priority
-              className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-xs"
+              className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-serif tracking-widest text-lg sm:text-xl font-bold text-stone-950">
+            <span className="font-serif tracking-widest text-xl sm:text-2xl font-bold text-stone-950">
               BIRLA
             </span>
-            <span className="text-[10px] font-semibold tracking-wider text-[#f26b45] uppercase font-mono">
+            <span className="text-[11px] font-bold tracking-wider text-[#f26b45] uppercase font-mono">
               Tour &amp; Travels
             </span>
           </div>

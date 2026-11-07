@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import TopAnnouncementBanner from "@/components/TopAnnouncementBanner";
+import ColorBends from "@/components/ui/ColorBends";
 
 export const metadata: Metadata = {
   title: "Birla Tour & Travels — Luxury Toyota Innova Crysta Taxi across Uttarakhand",
@@ -27,9 +29,30 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#F5F2EF] text-stone-900 antialiased selection:bg-stone-200 selection:text-stone-900 min-h-screen flex flex-col">
+      <body className="bg-[#F5F2EF] text-stone-900 antialiased selection:bg-stone-200 selection:text-stone-900 min-h-screen flex flex-col relative">
+        {/* Global Ambient ColorBends Background */}
+        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+          <ColorBends
+            colors={["#f26b45", "#fde68a", "#fdba74"]}
+            rotation={45}
+            speed={0.12}
+            scale={1.4}
+            frequency={1.2}
+            warpStrength={0.8}
+            mouseInfluence={0.5}
+            parallax={0.3}
+            noise={0.06}
+            iterations={2}
+            intensity={1.0}
+            bandWidth={8}
+            transparent={true}
+          />
+        </div>
         <Navbar />
-        <main className="flex-grow pt-20">{children}</main>
+        <main className="flex-grow pt-20">
+          <TopAnnouncementBanner />
+          {children}
+        </main>
       </body>
     </html>
   );
