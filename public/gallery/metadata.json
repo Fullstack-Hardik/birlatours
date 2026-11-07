@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "title": "Toyota Innova Crysta Luxury Executive Stance",
+    "category": "Luxury Fleet",
+    "location": "Haridwar",
+    "image": "/gallery/gal_01.jpg"
+  },
+  {
+    "id": 2,
+    "title": "VIP Protocol Escort & Mountain Pilot",
+    "category": "VIP Security",
+    "location": "Dehradun",
+    "image": "/gallery/gal_02.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Kedarnath & Badrinath High Altitude Expedition",
+    "category": "Char Dham",
+    "location": "Kedarnath",
+    "image": "/gallery/gal_03.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Jolly Grant Airport Chauffeur Welcome Service",
+    "category": "Airport Transfer",
+    "location": "Dehradun Airport",
+    "image": "/gallery/gal_04.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Haridwar Junction VIP Station Reception",
+    "category": "Railway Station",
+    "location": "Haridwar",
+    "image": "/gallery/gal_05.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Luxury Resort Transfers & Boutique Retreats",
+    "category": "Resort Transfer",
+    "location": "Mussoorie",
+    "image": "/gallery/gal_06.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Gangotri Valley Scenic Himalayan Drive",
+    "category": "Char Dham",
+    "location": "Uttarkashi",
+    "image": "/gallery/gal_07.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Yamunotri Alpine Route Expedition Cruiser",
+    "category": "Char Dham",
+    "location": "Barkot",
+    "image": "/gallery/gal_08.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Pristine Sanitized 7-Seater Captain Interior",
+    "category": "Interior Luxury",
+    "location": "Haridwar Base",
+    "image": "/gallery/gal_09.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Spacious Boot Capacity for Pilgrimage Luggage",
+    "category": "Fleet Capacity",
+    "location": "Dehradun Base",
+    "image": "/gallery/gal_10.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Certified Mountain Chauffeur in Executive Uniform",
+    "category": "Chauffeur Team",
+    "location": "Rishikesh",
+    "image": "/gallery/gal_11.jpg"
+  },
+  {
+    "id": 12,
+    "title": "All-Weather Luxury Mountain Highway Cruiser",
+    "category": "Highway Express",
+    "location": "Roorkee - Dehradun",
+    "image": "/gallery/gal_12.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Char Dham Alpine Fleet Lineup at Dawn",
+    "category": "Pilgrimage Fleet",
+    "location": "Haridwar Depot",
+    "image": "/gallery/gal_13.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Government Authorized VIP Pilot Escort Unit",
+    "category": "VIP Transport",
+    "location": "Dehradun Secretariat",
+    "image": "/gallery/gal_14.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Mussoorie & Dhanaulti Hill Station Tourer",
+    "category": "Hill Tour",
+    "location": "Mussoorie",
+    "image": "/gallery/gal_15.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Auli Ski & Valley View Luxury Conveyance",
+    "category": "Adventure Tour",
+    "location": "Joshimath",
+    "image": "/gallery/gal_16.jpg"
+  },
+  {
+    "id": 17,
+    "title": "Chopta Tungnath Trek Basecamp Shuttle",
+    "category": "Pilgrimage Route",
+    "location": "Rudraprayag",
+    "image": "/gallery/gal_17.jpg"
+  },
+  {
+    "id": 18,
+    "title": "Rishikesh Ganga Aarti Sunset Chauffeur Transfer",
+    "category": "Heritage Tour",
+    "location": "Rishikesh",
+    "image": "/gallery/gal_18.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Tehri Lake Resort & Watersports Express",
+    "category": "Weekend Getaway",
+    "location": "New Tehri",
+    "image": "/gallery/gal_19.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Corbett National Park Safari Express Transfer",
+    "category": "Wildlife Tour",
+    "location": "Ramnagar",
+    "image": "/gallery/gal_20.jpg"
+  },
+  {
+    "id": 21,
+    "title": "Nainital & Kumaon Lake District Expedition",
+    "category": "Kumaon Tour",
+    "location": "Nainital",
+    "image": "/gallery/gal_21.jpg"
+  },
+  {
+    "id": 22,
+    "title": "Hemkund Sahib Gurudwara Pilgrimage Service",
+    "category": "Sikh Pilgrimage",
+    "location": "Govindghat",
+    "image": "/gallery/gal_22.jpg"
+  },
+  {
+    "id": 23,
+    "title": "Dehradun to Delhi NCR Premium Expressway Fleet",
+    "category": "Interstate Taxi",
+    "location": "Delhi - Dehradun",
+    "image": "/gallery/gal_23.jpg"
+  },
+  {
+    "id": 24,
+    "title": "Haridwar to Jolly Grant 24x7 Express Cab",
+    "category": "Airport Transfer",
+    "location": "Jolly Grant",
+    "image": "/gallery/gal_24.jpg"
+  },
+  {
+    "id": 25,
+    "title": "Neelkanth Mahadev Temple Sacred Ridge Ride",
+    "category": "Temple Pilgrimage",
+    "location": "Rishikesh Hills",
+    "image": "/gallery/gal_25.jpg"
+  },
+  {
+    "id": 26,
+    "title": "Lansdowne Cantonment Peaceful Hill Retreat",
+    "category": "Hill Station",
+    "location": "Pauri Garhwal",
+    "image": "/gallery/gal_26.jpg"
+  },
+  {
+    "id": 27,
+    "title": "Bespoke Corporate Executive Fleet for Conclaves",
+    "category": "Corporate Travel",
+    "location": "Dehradun",
+    "image": "/gallery/gal_27.jpg"
+  },
+  {
+    "id": 28,
+    "title": "Night Express Intercity Safe Family Chauffeur",
+    "category": "24x7 Service",
+    "location": "Haridwar",
+    "image": "/gallery/gal_28.jpg"
+  },
+  {
+    "id": 29,
+    "title": "Himalayan Winter Snow Escort & Chain Grip Fitted",
+    "category": "Winter Expeditions",
+    "location": "Chamoli",
+    "image": "/gallery/gal_29.jpg"
+  },
+  {
+    "id": 30,
+    "title": "Birla Tour & Travels Full Fleet Lineup",
+    "category": "Flagship Network",
+    "location": "Uttarakhand",
+    "image": "/gallery/gal_30.jpg"
+  }
+]
