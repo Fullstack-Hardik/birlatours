@@ -221,25 +221,24 @@ _Sent via Birla Tour & Travels Home Form_`;
               </Link>
             </div>
 
-            {/* Quick Contact & Rating Badge */}
+            {/* Quick Contact & Verification Badges */}
             <div className="pt-6 border-t border-stone-300/70 grid grid-cols-2 gap-6 max-w-md">
               <div className="space-y-1">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-2xl sm:text-3xl font-serif font-bold text-stone-900">4.9</span>
-                  <div className="flex text-amber-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-[11px] uppercase tracking-wider text-stone-500 font-mono font-medium">
-                  Verified Travelers · 450+ Reviews
+                <span className="text-xs uppercase font-bold tracking-wider text-emerald-700 flex items-center gap-1.5 font-mono">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  Verified Cabs
+                </span>
+                <p className="text-xs text-stone-600 font-sans">
+                  Toyota Innova Crysta &amp; Veteran Mountain Chauffeurs
                 </p>
               </div>
 
               <div className="space-y-1">
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-stone-900">24x7</div>
-                <p className="text-[11px] uppercase tracking-wider text-stone-500 font-mono font-medium">
+                <span className="text-xs uppercase font-bold tracking-wider text-stone-900 flex items-center gap-1.5 font-mono">
+                  <Phone className="w-4 h-4 text-[#f26b45]" />
+                  24x7 Helpdesk
+                </span>
+                <p className="text-xs font-mono font-bold text-stone-900">
                   9917490721 / 6397295500
                 </p>
               </div>
@@ -399,51 +398,7 @@ _Sent via Birla Tour & Travels Home Form_`;
         </div>
       </section>
 
-      {/* REVIEWS SECTION */}
-      <section className="py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto border-t border-stone-300/60">
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-2">
-          <span className="text-xs font-bold tracking-widest uppercase text-stone-500">
-            Guest Feedback
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-950 tracking-tight">
-            Trusted by Travelers
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reviews.map((r, i) => (
-            <div
-              key={i}
-              className="p-6 sm:p-8 rounded-2xl bg-white border border-stone-300/70 space-y-4 flex flex-col justify-between shadow-xs"
-            >
-              <div className="space-y-3">
-                <div className="flex text-amber-500 gap-1">
-                  {[...Array(r.rating)].map((_, idx) => (
-                    <Star key={idx} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-xs sm:text-sm text-stone-700 italic leading-relaxed">
-                  &ldquo;{r.text}&rdquo;
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3 pt-3 border-t border-stone-200">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-stone-300">
-                  <Image src={r.avatar} alt={r.name} fill className="object-cover" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900">
-                    {r.name}
-                  </h4>
-                  <p className="text-[11px] text-stone-500 font-mono">
-                    {r.city} · {r.role}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* REVIEWS SECTION REMOVED TO ADHERE TO NO UNVERIFIED / FAKE TESTIMONIALS */}
 
       {/* OFFICES, CONTACT & DIRECT WHATSAPP BOOKING */}
       <section id="contact" className="py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto border-t border-stone-300/60">

@@ -61,46 +61,30 @@ export default function GalleryPage() {
         </div>
       </header>
 
-      {/* Hero Header: Just "Gallery" with animated text */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-14 pb-10 text-center">
-        <div className="inline-block">
-          <motion.h1
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-5xl sm:text-7xl lg:text-8xl font-serif font-normal tracking-tight text-stone-950"
-          >
-            <GhostType
-              phrases={[
-                { typed: "Gallery", ghost: " — Birla Tour & Travels" },
-                { typed: "Gallery", ghost: " — Toyota Innova Crysta" },
-                { typed: "Gallery", ghost: " — Uttarakhand Fleet" },
-              ]}
-              typingSpeed={85}
-              pauseDuration={2800}
-            />
-          </motion.h1>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-            className="h-[2px] w-24 bg-[#f26b45] mx-auto mt-4 rounded-full"
-          />
+      {/* Gallery Title */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-12 pb-8 text-center">
+        <div className="inline-block space-y-2">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#f26b45] font-mono">
+            Birla Tour &amp; Travels
+          </span>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-stone-950">
+            Fleet &amp; Tour Photography
+          </h1>
+          <p className="text-xs sm:text-sm text-stone-600 max-w-lg mx-auto">
+            High-resolution photographs of our Toyota Innova Crysta cabs, Himalayan highway routes, and passenger pickups across Haridwar, Dehradun &amp; Roorkee.
+          </p>
+          <div className="h-[2px] w-20 bg-[#f26b45] mx-auto mt-3 rounded-full" />
         </div>
       </div>
 
-      {/* Gallery Grid with Scrolling Blurry Effect */}
+      {/* Gallery Grid: Smooth, Fast & Crisp */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pb-28">
         <Gallery>
           <GalleryGrid className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5">
-            {items.map((item, index) => (
-              <motion.div
+            {items.map((item) => (
+              <div
                 key={item.id}
-                initial={{ opacity: 0, filter: "blur(8px)", y: 24 }}
-                whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                viewport={{ once: false, margin: "-40px" }}
-                transition={{ duration: 0.65, delay: (index % 4) * 0.08, ease: "easeOut" }}
-                className="transition-all duration-300"
+                className="mb-5 break-inside-avoid rounded-2xl overflow-hidden border border-stone-300/80 shadow-xs hover:shadow-lg transition-all duration-300"
               >
                 <GalleryImage
                   id={`fleet-${item.id}`}
@@ -110,7 +94,7 @@ export default function GalleryPage() {
                   category={item.category}
                   className="w-full"
                 />
-              </motion.div>
+              </div>
             ))}
           </GalleryGrid>
         </Gallery>
