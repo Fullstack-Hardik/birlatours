@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, MessageCircle, Clock, Shield, Send, CheckCircle2 } from 'lucide-react';
-import ChromaCurrent from '@/components/ui/chroma-current';
 import Footer from '@/components/Footer';
 
 export default function ContactPage() {

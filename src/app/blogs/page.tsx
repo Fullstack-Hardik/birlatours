@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BookOpen, Calendar, Clock, ArrowRight, MapPin, Phone, Car, MessageCircle, CheckCircle2, ChevronRight } from 'lucide-react';
-import ChromaCurrent from '@/components/ui/chroma-current';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
 

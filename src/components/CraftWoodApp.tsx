@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import HeroCarousel from '@/components/HeroCarousel';
 import Footer from '@/components/Footer';
-import ChromaCurrent from '@/components/ui/chroma-current';
 import BookingModal from '@/components/BookingModal';
 
 export default function CraftWoodApp() {

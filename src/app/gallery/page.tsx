@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Gallery, GalleryGrid, GalleryImage } from '@/components/ui/shared-element-gallery';
 import galleryData from '../../../public/gallery/metadata.json';
 import { ArrowLeft, Phone } from 'lucide-react';
-import ChromaCurrent from '@/components/ui/chroma-current';
 import Footer from '@/components/Footer';
 import GhostType from '@/components/ui/ghost-type';
 

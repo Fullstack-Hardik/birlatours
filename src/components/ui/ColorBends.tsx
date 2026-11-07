@@ -109,6 +109,26 @@ void main() {
 }
 `;
 
+interface ColorBendsProps {
+  className?: string;
+  style?: React.CSSProperties;
+  rotation?: number;
+  speed?: number;
+  colors?: string[];
+  transparent?: boolean;
+  autoRotate?: number;
+  scale?: number;
+  frequency?: number;
+  warpStrength?: number;
+  mouseInfluence?: number;
+  parallax?: number;
+  noise?: number;
+  iterations?: number;
+  intensity?: number;
+  bandWidth?: number;
+  color?: string;
+}
+
 export default function ColorBends({
   className = '',
   style = {},
@@ -126,24 +146,7 @@ export default function ColorBends({
   iterations = 1,
   intensity = 1.5,
   bandWidth = 6
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-  rotation?: number;
-  speed?: number;
-  colors?: string[];
-  transparent?: boolean;
-  autoRotate?: number;
-  scale?: number;
-  frequency?: number;
-  warpStrength?: number;
-  mouseInfluence?: number;
-  parallax?: number;
-  noise?: number;
-  iterations?: number;
-  intensity?: number;
-  bandWidth?: number;
-}) {
+}: ColorBendsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const rafRef = useRef<number | null>(null);
@@ -194,17 +197,11 @@ export default function ColorBends({
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    let renderer: THREE.WebGLRenderer;
-    try {
-      renderer = new THREE.WebGLRenderer({
-        antialias: false,
-        powerPreference: 'high-performance',
-        alpha: true
-      });
-    } catch {
-      return;
-    }
-
+    const renderer = new THREE.WebGLRenderer({
+      antialias: false,
+      powerPreference: 'high-performance',
+      alpha: true
+    });
     rendererRef.current = renderer;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setPixelRatio(Math.min(typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1, 2));
@@ -217,7 +214,7 @@ export default function ColorBends({
     const clock = new THREE.Clock();
 
     const handleResize = () => {
-      if (!container || !renderer) return;
+      if (!container) return;
       const w = container.clientWidth || 1;
       const h = container.clientHeight || 1;
       renderer.setSize(w, h, false);
@@ -226,12 +223,14 @@ export default function ColorBends({
 
     handleResize();
 
-    if (typeof ResizeObserver !== 'undefined') {
-      const ro = new ResizeObserver(handleResize);
-      ro.observe(container);
-      resizeObserverRef.current = ro;
-    } else {
-      window.addEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      if ('ResizeObserver' in window) {
+        const ro = new ResizeObserver(handleResize);
+        ro.observe(container);
+        resizeObserverRef.current = ro;
+      } else {
+        (window as Window).addEventListener('resize', handleResize);
+      }
     }
 
     const loop = () => {
@@ -258,7 +257,7 @@ export default function ColorBends({
     return () => {
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
       if (resizeObserverRef.current) resizeObserverRef.current.disconnect();
-      else window.removeEventListener('resize', handleResize);
+      else if (typeof window !== 'undefined') (window as Window).removeEventListener('resize', handleResize);
       geometry.dispose();
       material.dispose();
       renderer.dispose();
@@ -328,7 +327,7 @@ export default function ColorBends({
     const container = containerRef.current;
     if (!material || !container) return;
 
-    const handlePointerMove = (e: PointerEvent) => {
+    const handlePointerMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / (rect.width || 1)) * 2 - 1;
       const y = -(((e.clientY - rect.top) / (rect.height || 1)) * 2 - 1);
@@ -343,4 +342,3 @@ export default function ColorBends({
 
   return <div ref={containerRef} className={`color-bends-container ${className}`} style={style} />;
 }
-
