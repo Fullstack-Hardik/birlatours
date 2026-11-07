@@ -284,9 +284,6 @@ _Sent via Birla Tour & Travels Home Form_`;
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider bg-stone-950/90 backdrop-blur-xs text-white px-3 py-1 rounded-full shadow-xs">
-                    {service.badge}
-                  </span>
                 </div>
 
                 <div className="p-6 sm:p-8 space-y-3">
@@ -400,81 +397,107 @@ _Sent via Birla Tour & Travels Home Form_`;
 
       {/* REVIEWS SECTION REMOVED TO ADHERE TO NO UNVERIFIED / FAKE TESTIMONIALS */}
 
-      {/* OFFICES, CONTACT & DIRECT WHATSAPP BOOKING */}
+      {/* FREQUENTLY ASKED QUESTIONS SECTION */}
+      <section id="faq" className="py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto border-t border-stone-300/60">
+        <div className="max-w-3xl mx-auto space-y-10">
+          <div className="text-center space-y-2">
+            <span className="text-xs font-bold tracking-widest uppercase text-[#f26b45] font-mono">
+              Help &amp; Clarifications
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-950">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-600">
+              Direct information on vehicle bookings, billing, mountain drivers, and flight tracking.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {faqs.map((faq, index) => (
+              <details
+                key={index}
+                className="group bg-white rounded-2xl border border-stone-300/80 p-5 sm:p-6 cursor-pointer shadow-xs hover:border-stone-400/80 transition-all duration-200"
+              >
+                <summary className="flex items-center justify-between font-serif text-base sm:text-lg font-bold text-stone-950 select-none list-none">
+                  <span>{faq.q}</span>
+                  <div className="w-7 h-7 rounded-full bg-stone-100 group-open:bg-[#f26b45] group-open:text-white flex items-center justify-center shrink-0 transition-all duration-200 ml-4">
+                    <ChevronDown className="w-4 h-4 transition-transform duration-300 group-open:rotate-180" />
+                  </div>
+                </summary>
+                <p className="mt-3 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+
+          <div className="text-center pt-2">
+            <Link
+              href="/faqs"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-800 hover:text-[#f26b45] transition"
+            >
+              <span>View All Detailed FAQs</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* INSTANT CAB ENQUIRY & CONTACT SECTION */}
       <section id="contact" className="py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto border-t border-stone-300/60">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Details */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-2">
-              <span className="text-xs font-bold tracking-widest uppercase text-stone-500">
-                Haridwar &amp; Dehradun Hubs
+              <span className="text-xs font-bold tracking-widest uppercase text-[#f26b45] font-mono">
+                Direct Contact
               </span>
               <h2 className="text-3xl font-serif font-bold text-stone-950">
-                Direct Contact &amp; Booking
+                Haridwar, Roorkee &amp; Dehradun Hubs
               </h2>
               <p className="text-xs sm:text-sm text-stone-600">
-                Pickups available anywhere in Uttarakhand. Reach out directly or send details via WhatsApp.
+                Pickups available anywhere in Uttarakhand. Reach out directly or send trip details via WhatsApp.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-2xl border border-stone-300/80 space-y-4 shadow-xs">
               <a
                 href="tel:+919917490721"
-                className="flex items-center gap-3 p-3 rounded-xl bg-[#EBE8E4] hover:bg-stone-300/50 transition"
+                className="flex items-center gap-3 p-3.5 rounded-xl bg-[#EBE8E4] hover:bg-stone-300/60 transition group"
               >
-                <div className="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
                   <Phone className="w-4 h-4 text-[#f26b45]" />
                 </div>
                 <div>
-                  <span className="text-[11px] text-stone-500 font-semibold uppercase">Booking Line 1</span>
-                  <p className="text-sm font-mono font-bold text-stone-950">+91 99174 90721</p>
+                  <span className="text-[10px] text-stone-500 font-semibold uppercase">Primary Booking Desk</span>
+                  <p className="text-sm font-mono font-bold text-stone-950 group-hover:text-[#f26b45] transition">+91 99174 90721</p>
                 </div>
               </a>
 
               <a
                 href="tel:+916397295500"
-                className="flex items-center gap-3 p-3 rounded-xl bg-[#EBE8E4] hover:bg-stone-300/50 transition"
+                className="flex items-center gap-3 p-3.5 rounded-xl bg-[#EBE8E4] hover:bg-stone-300/60 transition group"
               >
-                <div className="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
                   <Phone className="w-4 h-4 text-[#f26b45]" />
                 </div>
                 <div>
-                  <span className="text-[11px] text-stone-500 font-semibold uppercase">Booking Line 2</span>
-                  <p className="text-sm font-mono font-bold text-stone-950">+91 63972 95500</p>
+                  <span className="text-[10px] text-stone-500 font-semibold uppercase">Fleet Dispatch</span>
+                  <p className="text-sm font-mono font-bold text-stone-950 group-hover:text-[#f26b45] transition">+91 63972 95500</p>
                 </div>
               </a>
 
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-[#EBE8E4]">
-                <div className="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-3 p-3.5 rounded-xl bg-[#EBE8E4]">
+                <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
                   <MapPin className="w-4 h-4 text-[#f26b45]" />
                 </div>
-                <div className="text-xs text-stone-700">
-                  <span className="font-bold block text-stone-900">Main Operating Hubs:</span>
-                  <span>Haridwar Station &amp; Dehradun Jolly Grant Airport Terminal.</span>
+                <div className="text-xs text-stone-700 space-y-0.5">
+                  <span className="font-bold block text-stone-900">Head Office &amp; GSTIN:</span>
+                  <span>Vill. Asaf Nagar, NH-334, Roorkee, Distt. Haridwar (U.K.)</span>
+                  <span className="block font-mono text-[11px] text-[#f26b45] font-bold">GSTIN: 05AUAPK2728D1Z5</span>
                 </div>
               </div>
-            </div>
-
-            {/* Quick FAQs */}
-            <div id="faq" className="space-y-2">
-              <h3 className="text-base font-serif font-bold text-stone-950">
-                Quick Answers
-              </h3>
-              {faqs.map((faq, index) => (
-                <details
-                  key={index}
-                  className="group bg-white rounded-xl border border-stone-300/60 p-4 cursor-pointer text-xs"
-                >
-                  <summary className="flex items-center justify-between font-bold text-stone-900 select-none list-none">
-                    <span>{faq.q}</span>
-                    <ChevronDown className="w-3.5 h-3.5 text-stone-500 transition-transform group-open:rotate-180 shrink-0 ml-2" />
-                  </summary>
-                  <p className="mt-2 text-stone-600 leading-relaxed border-t border-stone-200 pt-2">
-                    {faq.a}
-                  </p>
-                </details>
-              ))}
             </div>
           </div>
 
@@ -483,13 +506,13 @@ _Sent via Birla Tour & Travels Home Form_`;
             <div className="mb-6 space-y-1">
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold uppercase tracking-wider">
                 <MessageCircle className="w-3 h-3" />
-                <span>Redirects to WhatsApp</span>
+                <span>Instant WhatsApp Confirmation</span>
               </div>
               <h3 className="text-2xl font-serif font-bold text-stone-950">
-                Instant Cab Enquiry Form
+                Instant Cab &amp; Tour Enquiry
               </h3>
               <p className="text-xs text-stone-600">
-                Fill the details below to open WhatsApp with your pre-formatted enquiry.
+                Submit trip details below to immediately open WhatsApp with your pre-formatted enquiry.
               </p>
             </div>
 
@@ -503,7 +526,7 @@ _Sent via Birla Tour & Travels Home Form_`;
                     placeholder="e.g. Rahul Sharma"
                     value={homeForm.name}
                     onChange={(e) => setHomeForm({ ...homeForm, name: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
                   />
                 </div>
 
@@ -515,7 +538,7 @@ _Sent via Birla Tour & Travels Home Form_`;
                     placeholder="e.g. 9917490721"
                     value={homeForm.phone}
                     onChange={(e) => setHomeForm({ ...homeForm, phone: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
                   />
                 </div>
               </div>
@@ -526,10 +549,11 @@ _Sent via Birla Tour & Travels Home Form_`;
                   <select
                     value={homeForm.pickup}
                     onChange={(e) => setHomeForm({ ...homeForm, pickup: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
                   >
                     <option value="Haridwar Railway Station">Haridwar Railway Station</option>
                     <option value="Dehradun Jolly Grant Airport">Dehradun Jolly Grant Airport</option>
+                    <option value="Roorkee NH-334">Roorkee NH-334</option>
                     <option value="Dehradun City / ISBT">Dehradun City / ISBT</option>
                     <option value="Rishikesh">Rishikesh</option>
                     <option value="Delhi NCR">Delhi NCR</option>
@@ -545,25 +569,25 @@ _Sent via Birla Tour & Travels Home Form_`;
                     placeholder="Char Dham, Kedarnath, Mussoorie, etc."
                     value={homeForm.destination}
                     onChange={(e) => setHomeForm({ ...homeForm, destination: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold uppercase tracking-wider text-stone-700">Dates &amp; Passenger Count</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-stone-700">Travel Date &amp; Passenger Count</label>
                 <textarea
                   rows={2}
                   placeholder="e.g. Travel on 15th, 5 passengers in Innova Crysta..."
                   value={homeForm.details}
                   onChange={(e) => setHomeForm({ ...homeForm, details: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
+                  className="w-full px-4 py-3 rounded-xl bg-[#F5F2EF] border border-stone-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#f26b45]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition shadow-xs"
+                className="w-full py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition shadow-md hover:shadow-lg"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Send via WhatsApp</span>

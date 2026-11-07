@@ -119,9 +119,6 @@ export default function ToursPage() {
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider bg-stone-900/90 text-white px-3 py-1 rounded-full backdrop-blur-xs">
-                    {tour.badge}
-                  </span>
                   <span className="absolute bottom-3 right-3 text-[11px] font-mono font-bold bg-white/95 text-stone-900 px-2.5 py-1 rounded-lg shadow-xs">
                     {tour.duration}
                   </span>
