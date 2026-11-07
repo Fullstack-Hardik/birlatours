@@ -7,7 +7,7 @@ import { Gallery, GalleryGrid, GalleryImage } from '@/components/ui/shared-eleme
 import galleryData from '../../../public/gallery/metadata.json';
 import { ArrowLeft, Phone } from 'lucide-react';
 import ChromaCurrent from '@/components/ui/chroma-current';
-import DoodleCrewFooter from '@/components/ui/doodle-crew-footer';
+import Footer from '@/components/Footer';
 import GhostType from '@/components/ui/ghost-type';
 
 interface GalleryItemData {
@@ -117,14 +117,7 @@ export default function GalleryPage() {
       </div>
 
       {/* Footer */}
-      <DoodleCrewFooter
-        wordmark="BIRLA"
-        brand="BIRLA TOUR AND TRAVELS"
-        blurb="Uttarakhand's leading luxury chauffeur network. Offices in Haridwar and Dehradun. 24x7 bookings."
-        tagline="Pristine, Punctual, Safe. Luxury travel across Uttarakhand."
-        preset="paper"
-        palette={{ background: "#F5F2EF", ink: "#1c1917", accent: "#f26b45" }}
-      />
+      <Footer />
     </div>
   );
 }

@@ -1,61 +1,246 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+  ShieldCheck,
+  Award,
+  Clock,
+  ArrowUpRight,
+  Car,
+  Compass,
+  FileCheck
+} from 'lucide-react';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-[#1f0b08] text-[#f7efe2] pt-20 pb-12 mt-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 space-y-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Brand Info */}
-          <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <span className="w-6 h-8 bg-[#f26b45] rounded-t-full block" />
-              <span className="text-2xl font-bold tracking-tight">BIRLA TOUR & TRAVELS</span>
+    <footer className="relative bg-[#181614] text-stone-300 pt-16 pb-12 overflow-hidden border-t border-stone-800">
+      {/* Subtle background glow */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[300px] bg-[#f26b45]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        {/* Top GST & Registration Trust Bar */}
+        <div className="p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl mb-14 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-wrap items-center gap-4 text-xs">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-stone-800/80 border border-stone-700/80">
+              <FileCheck className="w-4 h-4 text-[#f26b45]" />
+              <span className="text-stone-400">GSTIN:</span>
+              <span className="font-mono font-bold text-white tracking-wider">05AUAPK2728D1Z5</span>
             </div>
-            <p className="text-sm text-[#ebe2d3]/80 max-w-md leading-relaxed">
-              Uttarakhand’s premier transport & pilgrimage network. Providing immaculate Toyota Innova Crystas, official government protocol escort pilot cars, and customized Himalayan Char Dham yatras with veteran mountain chauffeurs.
-            </p>
-            <p className="text-xs text-[#dcb155] font-medium">
-              Registered Commercial Tourist Operator • Haridwar & Dehradun
-            </p>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-stone-800/80 border border-stone-700/80">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span className="text-white font-medium">Govt. Tax Invoice Provided</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-stone-800/80 border border-stone-700/80">
+              <Award className="w-4 h-4 text-amber-400" />
+              <span className="text-white font-medium">Uttarakhand Certified Transport Network</span>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-3 text-sm">
-            <div className="font-bold text-white uppercase tracking-wider text-xs">Pages</div>
-            <ul className="space-y-2 text-[#ebe2d3]/80">
-              <li><Link href="/" className="hover:text-[#f26b45] transition">Home</Link></li>
-              <li><Link href="/tours" className="hover:text-[#f26b45] transition">Tours & Pilgrimage</Link></li>
-              <li><Link href="/gallery" className="hover:text-[#f26b45] transition">Fleet & Gallery</Link></li>
-              <li><Link href="/faqs" className="hover:text-[#f26b45] transition">Pricing & FAQs</Link></li>
-              <li><Link href="/blogs" className="hover:text-[#f26b45] transition">Travel Guides</Link></li>
-              <li><Link href="/contact" className="hover:text-[#f26b45] transition">Contact Us</Link></li>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20inquire%20about%20a%20cab%20booking"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition shadow-sm"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>WhatsApp Booking</span>
+            </a>
+            <a
+              href="tel:+919917490721"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-800 hover:bg-stone-700 text-white text-xs font-mono font-bold transition border border-stone-700"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
+              <span>9917490721</span>
+            </a>
+          </div>
+        </div>
+
+        {/* 4 Main Footer Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-14">
+          
+          {/* Col 1: Brand & Official Address Info */}
+          <div className="lg:col-span-4 space-y-4">
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="relative w-14 h-12 shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Birla Tour & Travels Logo"
+                  fill
+                  className="object-contain group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif tracking-widest text-xl font-bold text-white">
+                  BIRLA
+                </span>
+                <span className="text-[10px] font-bold tracking-wider text-[#f26b45] uppercase font-mono">
+                  Tour &amp; Travels
+                </span>
+              </div>
+            </Link>
+
+            <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
+              Uttarakhand’s verified chauffeur and luxury transport agency. Operating clean Toyota Innova Crysta fleets with veteran mountain drivers for Char Dham, airport transfers, and hill stations.
+            </p>
+
+            <div className="pt-2 space-y-2 text-xs text-stone-300">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#f26b45] shrink-0 mt-0.5" />
+                <span>
+                  <strong>Registered Office:</strong> Vill. Asaf Nagar, NH-334, Roorkee - 247656, Distt. Haridwar (Uttarakhand)
+                </span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#f26b45] shrink-0" />
+                <a href="mailto:subhashbirla7051@gmail.com" className="hover:text-white transition font-mono">
+                  subhashbirla7051@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Col 2: Navigation Links */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-b border-stone-800 pb-2">
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <Link href="/" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-stone-500" />
+                  <span>Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/tours" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-stone-500" />
+                  <span>Tours &amp; Yatra</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-stone-500" />
+                  <span>Fleet Gallery</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blogs" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-stone-500" />
+                  <span>Travel Blogs</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/faqs" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-stone-500" />
+                  <span>FAQs</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-stone-500" />
+                  <span>Contact &amp; Offices</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Contact Details */}
-          <div className="space-y-3 text-sm">
-            <div className="font-bold text-white uppercase tracking-wider text-xs">Reach Us 24x7</div>
-            <div className="space-y-2 text-[#ebe2d3]/80">
-              <p>Haridwar Railway Station Road & Jolly Grant Airport Terminal, Uttarakhand</p>
-              <p><a href="tel:+919870772715" className="text-[#f26b45] font-semibold hover:underline">+91 98707 72715</a></p>
-              <p><a href="mailto:booking@birlatourtravels.com" className="hover:underline">booking@birlatourtravels.com</a></p>
-              <p className="text-xs text-[#ebe2d3]/60">Mon–Sun: 24 Hours Cab Dispatch</p>
+          {/* Col 3: Popular Tour Circuits */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-b border-stone-800 pb-2">
+              Yatra &amp; Routes
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <Link href="/tours" className="hover:text-[#f26b45] transition">
+                  Complete Char Dham Yatra (10 Days)
+                </Link>
+              </li>
+              <li>
+                <Link href="/tours" className="hover:text-[#f26b45] transition">
+                  Do Dham: Kedarnath &amp; Badrinath
+                </Link>
+              </li>
+              <li>
+                <Link href="/tours" className="hover:text-[#f26b45] transition">
+                  Jolly Grant Dehradun Airport Transfer
+                </Link>
+              </li>
+              <li>
+                <Link href="/tours" className="hover:text-[#f26b45] transition">
+                  Haridwar Junction Station Pickup
+                </Link>
+              </li>
+              <li>
+                <Link href="/tours" className="hover:text-[#f26b45] transition">
+                  Mussoorie, Dhanaulti &amp; Kanatal
+                </Link>
+              </li>
+              <li>
+                <Link href="/tours" className="hover:text-[#f26b45] transition">
+                  Chopta, Tungnath &amp; Auli Ski Tour
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: 24x7 Helpdesks */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-white border-b border-stone-800 pb-2">
+              24x7 Direct Helpdesk
+            </h4>
+            <div className="space-y-2.5">
+              <a
+                href="tel:+919917490721"
+                className="p-3 rounded-xl bg-stone-900 border border-stone-800 hover:border-[#f26b45]/50 transition flex items-center justify-between group"
+              >
+                <div>
+                  <span className="text-[10px] text-stone-500 uppercase block font-semibold">Primary Booking</span>
+                  <span className="text-xs font-mono font-bold text-white group-hover:text-[#f26b45] transition">
+                    +91 99174 90721
+                  </span>
+                </div>
+                <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
+              </a>
+
+              <a
+                href="tel:+916397295500"
+                className="p-3 rounded-xl bg-stone-900 border border-stone-800 hover:border-[#f26b45]/50 transition flex items-center justify-between group"
+              >
+                <div>
+                  <span className="text-[10px] text-stone-500 uppercase block font-semibold">Support &amp; Dispatch</span>
+                  <span className="text-xs font-mono font-bold text-white group-hover:text-[#f26b45] transition">
+                    +91 63972 95500
+                  </span>
+                </div>
+                <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
+              </a>
+
+              <div className="p-3 rounded-xl bg-stone-900/60 border border-stone-800/80 text-[11px] text-stone-400">
+                <span className="text-white font-medium block">Key Operational Hubs:</span>
+                Haridwar Junction, Jolly Grant Airport, Dehradun ISBT, Roorkee NH-334.
+              </div>
             </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-mono">
+          <p>© 2026 Birla Tour &amp; Travels. GSTIN: 05AUAPK2728D1Z5. All rights reserved.</p>
+          <div className="flex items-center gap-4 text-stone-400">
+            <span>Vill. Asaf Nagar, NH-334, Roorkee, Haridwar (U.K.)</span>
           </div>
         </div>
 
-        {/* Bottom Rule */}
-        <div className="border-t border-[#6a5c53]/40 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#ebe2d3]/60">
-          <p>© 2026 Birla Tour and Travels. All Rights Reserved.</p>
-          <div className="flex gap-6">
-            <span>Punctual • Sanitized • Mountain Expert</span>
-            <span>Terms of Travel</span>
-          </div>
-        </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -13,12 +13,33 @@ import {
   PhoneCall,
   Menu,
   X,
-  Phone
+  Phone,
+  MessageCircle,
+  MapPin,
+  ShieldCheck,
+  ChevronRight
 } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  // Close sidebar on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Prevent background scroll when sidebar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: 'Home', href: '/', icon: Home },
@@ -30,83 +51,33 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-[#F5F2EF]/85 backdrop-blur-md border-b border-stone-300/50 transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 h-20">
-        {/* Brand Logo with User Uploaded Custom Logo - Increased Size */}
-        <Link href="/" className="inline-flex items-center gap-3.5 group">
-          <div className="relative w-16 h-14 sm:w-20 sm:h-16 shrink-0">
-            <Image
-              src="/logo.png"
-              alt="Birla Tour & Travels Logo"
-              fill
-              priority
-              className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
-            />
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-serif tracking-widest text-xl sm:text-2xl font-bold text-stone-950">
-              BIRLA
-            </span>
-            <span className="text-[11px] font-bold tracking-wider text-[#f26b45] uppercase font-mono">
-              Tour &amp; Travels
-            </span>
-          </div>
-        </Link>
+    <>
+      <nav className="fixed inset-x-0 top-0 z-50 bg-[#F5F2EF]/90 backdrop-blur-md border-b border-stone-300/50 transition-all duration-300">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 h-20">
+          
+          {/* Brand Logo with User Uploaded Custom Logo - Increased Size */}
+          <Link href="/" className="inline-flex items-center gap-3.5 group">
+            <div className="relative w-16 h-14 sm:w-20 sm:h-16 shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Birla Tour & Travels Logo"
+                fill
+                priority
+                className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+              />
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-serif tracking-widest text-xl sm:text-2xl font-bold text-stone-950">
+                BIRLA
+              </span>
+              <span className="text-[11px] font-bold tracking-wider text-[#f26b45] uppercase font-mono">
+                Tour &amp; Travels
+              </span>
+            </div>
+          </Link>
 
-        {/* Desktop Links (Pill Bar with Icons) */}
-        <div className="hidden lg:flex items-center gap-1 p-1.5 rounded-full bg-[#EBE8E4] text-stone-800 border border-stone-300/50 shadow-xs">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            const IconComponent = link.icon;
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-                  isActive
-                    ? 'bg-stone-950 text-[#F5F2EF] shadow-sm'
-                    : 'text-stone-700 hover:text-stone-950 hover:bg-stone-300/40'
-                }`}
-              >
-                <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
-                <span>{link.name}</span>
-              </Link>
-            );
-          })}
-        </div>
-
-        {/* Quick Phone CTAs */}
-        <div className="hidden sm:flex items-center gap-3">
-          <a
-            href="tel:+919917490721"
-            className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-full border border-stone-300 bg-white/80 text-xs font-mono font-bold text-stone-800 hover:bg-white transition shadow-2xs"
-          >
-            <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
-            <span>9917490721</span>
-          </a>
-          <a
-            href="tel:+916397295500"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-900 text-[#F5F2EF] text-xs font-semibold uppercase tracking-wider hover:bg-stone-800 transition shadow-xs"
-          >
-            <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
-            <span>Book Cab</span>
-          </a>
-        </div>
-
-        {/* Mobile Hamburger Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#EBE8E4] text-stone-900 font-medium border border-stone-300/60"
-          aria-label="Toggle Navigation"
-        >
-          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {/* Mobile Drawer */}
-      {isOpen && (
-        <div className="fixed inset-0 top-20 z-50 flex flex-col justify-between p-6 bg-[#F5F2EF] text-stone-900 border-t border-stone-300/60 lg:hidden shadow-2xl">
-          <div className="flex flex-col gap-2 my-auto">
+          {/* Desktop Links (Pill Bar with Icons) */}
+          <div className="hidden lg:flex items-center gap-1 p-1.5 rounded-full bg-[#EBE8E4] text-stone-800 border border-stone-300/50 shadow-xs">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               const IconComponent = link.icon;
@@ -114,37 +85,155 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`flex items-center gap-3.5 text-xl font-serif font-medium p-3.5 rounded-2xl transition-colors ${
-                    isActive ? 'bg-stone-900 text-[#F5F2EF]' : 'text-stone-800 hover:bg-stone-200'
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                    isActive
+                      ? 'bg-stone-950 text-[#F5F2EF] shadow-sm'
+                      : 'text-stone-700 hover:text-stone-950 hover:bg-stone-300/40'
                   }`}
                 >
-                  <IconComponent className={`w-5 h-5 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
+                  <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
                   <span>{link.name}</span>
                 </Link>
               );
             })}
           </div>
 
-          <div className="pt-6 border-t border-stone-300 flex flex-col gap-3">
+          {/* Quick Phone CTAs */}
+          <div className="hidden sm:flex items-center gap-3">
             <a
               href="tel:+919917490721"
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-stone-900 text-[#F5F2EF] font-bold text-xs uppercase tracking-widest shadow-md"
+              className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-full border border-stone-300 bg-white/80 text-xs font-mono font-bold text-stone-800 hover:bg-white transition shadow-2xs"
             >
-              <Phone className="w-4 h-4 text-[#f26b45]" />
-              <span>Call +91 99174 90721</span>
+              <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
+              <span>9917490721</span>
             </a>
             <a
-              href="tel:+916397295500"
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#f26b45] text-white font-bold text-xs uppercase tracking-widest shadow-md"
+              href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20book%20a%20cab"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold uppercase tracking-wider hover:bg-emerald-700 transition shadow-xs"
             >
-              <Phone className="w-4 h-4" />
-              <span>Call +91 63972 95500</span>
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>Book Cab</span>
             </a>
+          </div>
+
+          {/* Mobile Hamburger Toggle Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden flex items-center justify-center w-11 h-11 rounded-2xl bg-white text-stone-900 border border-stone-300 shadow-xs active:scale-95 transition-transform"
+            aria-label="Toggle Navigation"
+          >
+            {isOpen ? <X className="w-5 h-5 text-stone-900" /> : <Menu className="w-5 h-5 text-stone-900" />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Modern Slide-over Sidebar for Mobile View with Backdrop */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 z-50 lg:hidden bg-stone-950/60 backdrop-blur-xs transition-opacity duration-300 animate-fadeIn"
+          onClick={() => setIsOpen(false)}
+        >
+          {/* Slide-in Drawer Container */}
+          <div 
+            className="fixed inset-y-0 right-0 w-[85%] max-w-sm bg-[#F5F2EF] h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto transform transition-transform duration-300 ease-out border-l border-stone-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Drawer Header */}
+            <div>
+              <div className="flex items-center justify-between pb-6 border-b border-stone-300/80">
+                <div className="flex items-center gap-3">
+                  <div className="relative w-12 h-10">
+                    <Image
+                      src="/logo.png"
+                      alt="Birla Tour & Travels Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <span className="font-serif font-bold text-base text-stone-950 block leading-tight">
+                      BIRLA TOURS
+                    </span>
+                    <span className="text-[10px] font-mono text-[#f26b45] font-semibold uppercase">
+                      Haridwar · Roorkee · Dehradun
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-9 h-9 rounded-full bg-stone-200 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition"
+                  aria-label="Close Menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Navigation Items */}
+              <div className="py-6 space-y-1.5">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  const IconComponent = link.icon;
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`flex items-center justify-between p-3.5 rounded-2xl text-sm font-semibold transition-all ${
+                        isActive
+                          ? 'bg-stone-950 text-white shadow-sm'
+                          : 'text-stone-800 hover:bg-stone-200/70'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <IconComponent className={`w-4 h-4 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
+                        <span>{link.name}</span>
+                      </div>
+                      <ChevronRight className={`w-4 h-4 ${isActive ? 'text-[#f26b45]' : 'text-stone-400'}`} />
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Bottom Actions & Office Info */}
+            <div className="space-y-4 pt-6 border-t border-stone-300">
+              <div className="p-3.5 rounded-2xl bg-white border border-stone-300 text-xs text-stone-700 space-y-1.5">
+                <div className="flex items-center gap-2 font-bold text-stone-900">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                  <span>GSTIN: 05AUAPK2728D1Z5</span>
+                </div>
+                <p className="text-[11px] text-stone-500">
+                  Vill. Asaf Nagar, NH-334, Roorkee, Haridwar
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href="tel:+919917490721"
+                  className="flex items-center justify-center gap-1.5 py-3 rounded-full bg-stone-900 text-white text-xs font-bold uppercase tracking-wider"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
+                  <span>Call Us</span>
+                </a>
+                <a
+                  href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20inquire%20about%20cab%20booking"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-3 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 

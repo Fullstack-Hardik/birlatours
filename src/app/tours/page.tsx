@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, MapPin, CheckCircle2, Car, MessageCircle, Calendar } from 'lucide-react';
 import ChromaCurrent from '@/components/ui/chroma-current';
-import DoodleCrewFooter from '@/components/ui/doodle-crew-footer';
+import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
 
 const tourPackages = [
@@ -210,14 +210,7 @@ export default function ToursPage() {
         initialTour={selectedTour}
       />
 
-      <DoodleCrewFooter
-        wordmark="BIRLA"
-        brand="BIRLA TOUR AND TRAVELS"
-        blurb="Uttarakhand's trusted taxi and tour service. Haridwar & Dehradun."
-        tagline="Clean cars, fair prices, safe mountain travel."
-        preset="paper"
-        palette={{ background: "#F5F2EF", ink: "#1c1917", accent: "#f26b45" }}
-      />
+      <Footer />
     </div>
   );
 }

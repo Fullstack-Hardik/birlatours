@@ -19,7 +19,7 @@ import {
   Send
 } from 'lucide-react';
 import HeroCarousel from '@/components/HeroCarousel';
-import DoodleCrewFooter from '@/components/ui/doodle-crew-footer';
+import Footer from '@/components/Footer';
 import ChromaCurrent from '@/components/ui/chroma-current';
 import BookingModal from '@/components/BookingModal';
 
@@ -274,7 +274,7 @@ _Sent via Birla Tour & Travels Home Form_`;
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl border border-stone-300/70 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-lg transition-all"
+              className="bg-white rounded-3xl border border-stone-300/70 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
               <div>
                 <div className="relative aspect-[16/10] w-full bg-stone-100 overflow-hidden">
@@ -282,16 +282,16 @@ _Sent via Birla Tour & Travels Home Form_`;
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider bg-stone-950 text-white px-3 py-1 rounded-full shadow-xs">
+                  <span className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider bg-stone-950/90 backdrop-blur-xs text-white px-3 py-1 rounded-full shadow-xs">
                     {service.badge}
                   </span>
                 </div>
 
                 <div className="p-6 sm:p-8 space-y-3">
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-950">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-950 group-hover:text-[#f26b45] transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -312,7 +312,7 @@ _Sent via Birla Tour & Travels Home Form_`;
                 <button
                   type="button"
                   onClick={() => handleOpenBooking(service.title)}
-                  className="flex-1 py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-xs"
+                  className="flex-1 py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-xs hover:shadow-md"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Book on WhatsApp</span>
@@ -626,48 +626,8 @@ _Sent via Birla Tour & Travels Home Form_`;
         initialTour={selectedTourForModal}
       />
 
-      {/* DOODLE CREW FOOTER */}
-      <DoodleCrewFooter
-        wordmark="BIRLA"
-        brand="BIRLA TOUR AND TRAVELS"
-        blurb="Uttarakhand's leading luxury chauffeur network. Offices in Haridwar and Dehradun. 24x7 bookings."
-        tagline="Pristine, Punctual, Safe. Luxury travel across Uttarakhand."
-        preset="paper"
-        palette={{ background: "#F5F2EF", ink: "#1c1917", accent: "#f26b45" }}
-        columns={[
-          {
-            title: "Operating Hubs",
-            links: [
-              { label: "Haridwar Station Desk", href: "/contact" },
-              { label: "Dehradun Airport Desk", href: "/contact" },
-              { label: "Rishikesh Base", href: "/contact" }
-            ]
-          },
-          {
-            title: "Popular Tours",
-            links: [
-              { label: "Char Dham Yatra", href: "/tours" },
-              { label: "Kedarnath & Badrinath", href: "/tours" },
-              { label: "Mussoorie & Dhanaulti", href: "/tours" },
-              { label: "Chopta & Auli", href: "/tours" }
-            ]
-          },
-          {
-            title: "Direct Help",
-            links: [
-              { label: "+91 99174 90721", href: "tel:+919917490721" },
-              { label: "+91 63972 95500", href: "tel:+916397295500" },
-              { label: "WhatsApp Desk", href: "https://wa.me/919917490721" },
-              { label: "Fleet Gallery", href: "/gallery" }
-            ]
-          }
-        ]}
-        actions={[
-          { label: "Call 9917490721", href: "tel:+919917490721", icon: "bolt", variant: "solid" },
-          { label: "Call 6397295500", href: "tel:+916397295500", icon: "sandwich", variant: "outline" }
-        ]}
-        copyright="© 2026 Birla Tour and Travels. All rights reserved."
-      />
+      {/* REFINED MODERN PROFESSIONAL FOOTER */}
+      <Footer />
 
       {/* FLOATING ACTION BUTTON */}
       <div className="fixed right-6 bottom-6 z-50 group flex flex-col items-end">

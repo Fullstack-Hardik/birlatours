@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HelpCircle, ChevronDown, Phone, MapPin, Car, Shield, CheckCircle2 } from 'lucide-react';
 import ChromaCurrent from '@/components/ui/chroma-current';
-import DoodleCrewFooter from '@/components/ui/doodle-crew-footer';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions | Birla Tour and Travels',
@@ -131,14 +131,7 @@ export default function FaqsPage() {
         </div>
       </div>
 
-      <DoodleCrewFooter
-        wordmark="BIRLA"
-        brand="BIRLA TOUR AND TRAVELS"
-        blurb="Uttarakhand's leading luxury chauffeur network. Offices in Haridwar and Dehradun. 24x7 bookings."
-        tagline="Pristine, Punctual, Safe. Luxury travel across Uttarakhand."
-        preset="paper"
-        palette={{ background: "#F5F2EF", ink: "#1c1917", accent: "#f26b45" }}
-      />
+      <Footer />
     </div>
   );
 }

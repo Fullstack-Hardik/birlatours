@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, MessageCircle, Clock, Shield, Send, CheckCircle2 } from 'lucide-react';
 import ChromaCurrent from '@/components/ui/chroma-current';
-import DoodleCrewFooter from '@/components/ui/doodle-crew-footer';
+import Footer from '@/components/Footer';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -110,29 +110,32 @@ _Sent via Birla Tour & Travels Contact Form_`;
 
                 {/* Email */}
                 <a
-                  href="mailto:info@birlatours.com"
+                  href="mailto:subhashbirla7051@gmail.com"
                   className="flex items-center gap-4 p-3.5 rounded-2xl bg-[#EBE8E4] hover:bg-stone-300/50 transition group"
                 >
                   <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4 text-[#f26b45]" />
                   </div>
                   <div>
-                    <span className="text-xs text-stone-500 uppercase font-semibold">Email Us</span>
+                    <span className="text-xs text-stone-500 uppercase font-semibold">Official Email</span>
                     <p className="text-sm font-mono font-bold text-stone-900 group-hover:text-[#f26b45] transition">
-                      birlatourstravels@gmail.com
+                      subhashbirla7051@gmail.com
                     </p>
                   </div>
                 </a>
 
-                {/* Locations note */}
+                {/* Registered Office & GSTIN */}
                 <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#EBE8E4]">
                   <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4 text-[#f26b45]" />
                   </div>
                   <div className="space-y-0.5">
-                    <span className="text-xs text-stone-500 uppercase font-semibold">Pickup Hubs</span>
-                    <p className="text-xs text-stone-800 leading-relaxed">
-                      Haridwar Junction &amp; Dehradun Jolly Grant Airport terminal desks.
+                    <span className="text-xs text-stone-500 uppercase font-semibold">Registered Office &amp; GSTIN</span>
+                    <p className="text-xs text-stone-900 font-medium leading-relaxed">
+                      Vill. Asaf Nagar, NH-334, Roorkee - 247656, Distt. Haridwar (U.K.)
+                    </p>
+                    <p className="text-[11px] font-mono font-bold text-[#f26b45]">
+                      GSTIN: 05AUAPK2728D1Z5
                     </p>
                   </div>
                 </div>
@@ -298,14 +301,7 @@ _Sent via Birla Tour & Travels Contact Form_`;
 
       </div>
 
-      <DoodleCrewFooter
-        wordmark="BIRLA"
-        brand="BIRLA TOUR AND TRAVELS"
-        blurb="Uttarakhand's trusted chauffeur cab network. 24x7 bookings."
-        tagline="Pristine Innova Crysta cabs across Haridwar, Dehradun & Char Dham."
-        preset="paper"
-        palette={{ background: "#F5F2EF", ink: "#1c1917", accent: "#f26b45" }}
-      />
+      <Footer />
     </div>
   );
 }

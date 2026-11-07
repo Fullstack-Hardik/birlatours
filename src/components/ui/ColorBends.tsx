@@ -343,3 +343,4 @@ export default function ColorBends({
 
   return <div ref={containerRef} className={`color-bends-container ${className}`} style={style} />;
 }
+
