@@ -370,20 +370,22 @@ _Sent via Birla Tour & Travels Home Form_`;
             <div
               key={i}
               onClick={() => handleOpenBooking(item.title)}
-              className="relative p-6 sm:p-7 rounded-3xl bg-white/75 backdrop-blur-xl text-stone-900 border border-stone-200/90 shadow-[0_10px_35px_-5px_rgba(0,0,0,0.06)] hover:border-orange-500/60 hover:shadow-[0_20px_45px_-10px_rgba(242,107,69,0.22)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer group overflow-hidden"
+              className="relative p-6 sm:p-7 rounded-3xl bg-white/50 hover:bg-white/60 backdrop-blur-md text-stone-900 border border-stone-200/90 shadow-[0_10px_35px_-5px_rgba(0,0,0,0.06)] hover:border-orange-500/70 hover:shadow-[0_20px_45px_-10px_rgba(242,107,69,0.28)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer group overflow-hidden"
             >
               {/* Subtle Warm Highlight Corner */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-tr-3xl" />
+              <div className="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-orange-400/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-tr-3xl" />
 
-              {/* Light-fade Translucent Scenic Background Image */}
-              <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.08] group-hover:opacity-[0.16] transition-opacity duration-700 ease-out overflow-hidden">
+              {/* Enhanced Scenic Background Image (thoda kam transparent taaki images clearly dikhe) */}
+              <div className="absolute inset-0 z-0 pointer-events-none opacity-30 group-hover:opacity-45 transition-opacity duration-700 ease-out overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover object-center filter saturate-125 scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover object-center filter saturate-125 scale-100 group-hover:scale-108 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
+                {/* Soft atmospheric gradient allowing the image to show through clearly while preserving text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/55 to-white/30" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.accent} opacity-60`} />
               </div>
 
               {/* Card Foreground Content */}
@@ -394,22 +396,22 @@ _Sent via Birla Tour & Travels Home Form_`;
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900 group-hover:text-[#f26b45] transition-colors tracking-tight">
+                  <h3 className="text-base sm:text-lg font-serif font-bold text-stone-950 group-hover:text-[#f26b45] transition-colors tracking-tight drop-shadow-xs">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-[13px] text-stone-600 leading-relaxed font-sans font-normal">
+                  <p className="text-xs sm:text-[13px] text-stone-700 leading-relaxed font-sans font-medium">
                     {item.desc}
                   </p>
                 </div>
               </div>
 
               {/* Card Footer CTA */}
-              <div className="relative z-10 pt-4 mt-5 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500 group-hover:text-stone-800 transition">
+              <div className="relative z-10 pt-4 mt-5 border-t border-stone-300/70 flex items-center justify-between text-xs text-stone-600 group-hover:text-stone-900 transition">
                 <span className="font-sans font-bold tracking-wider text-[11px] text-[#f26b45] group-hover:text-[#e05a34] transition-colors uppercase">
                   Book Package
                 </span>
-                <div className="w-7 h-7 rounded-full bg-white border border-stone-300/80 shadow-xs flex items-center justify-center group-hover:border-orange-500/60 group-hover:bg-orange-50 transition-all">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-600 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <div className="w-7 h-7 rounded-full bg-white/90 border border-stone-300/80 shadow-xs flex items-center justify-center group-hover:border-orange-500/60 group-hover:bg-orange-50 transition-all">
+                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-700 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>
             </div>
