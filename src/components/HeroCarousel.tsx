@@ -15,6 +15,12 @@ interface HeroCarouselProps {
 
 const defaultSlides = [
   {
+    src: '/carousel/c_vip_convocation.jpg',
+    tag: '4-Star VIP Protocol Pilot',
+    title: 'Dignitary & Convoy Security Escorts',
+    sub: 'Official protocol pilot unit with certified chauffeur Subhash Birla across Uttarakhand'
+  },
+  {
     src: '/carousel/c1.jpg',
     tag: 'Flagship Toyota Innova Crysta',
     title: 'Pristine 7-Seater Luxury Fleet',
