@@ -274,10 +274,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-mono">
+        <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-mono">
           <p>© 2026 Birla Tour &amp; Travels. GSTIN: 05AUAPK2728D1Z5. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-stone-400">
+          
+          <div className="flex flex-wrap items-center justify-center gap-4 text-stone-400">
             <span>Vill. Asaf Nagar, NH-334, Roorkee, Haridwar (U.K.)</span>
+            <span className="hidden sm:inline text-stone-700">·</span>
+            <a
+              href="https://garrydigital360.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900 border border-stone-800 hover:border-orange-500/50 text-stone-400 hover:text-white transition group"
+            >
+              <span>Powered by</span>
+              <span className="font-semibold text-stone-200 group-hover:text-[#f26b45] transition">garrydigital360.in</span>
+              <ArrowUpRight className="w-3 h-3 text-stone-500 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
           </div>
         </div>
 
