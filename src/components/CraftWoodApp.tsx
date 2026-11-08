@@ -287,14 +287,14 @@ _Sent via Birla Tour & Travels Home Form_`;
           </p>
         </div>
 
-        {/* 6 Modern Dark Minimalist Cards (Image 2 style) with Light Fade Glassmorphism & Translucent Background */}
+        {/* 6 Elegant Light Glassmorphic Service Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {[
             {
               title: "Char Dham Yatra Circuit",
               desc: "Complete 10-day pilgrimage to Yamunotri, Gangotri, Kedarnath & Badrinath with hill-tested chauffeurs.",
               image: "/images/tours/tour_kedarnath.jpg",
-              accent: "from-orange-500/25 via-amber-500/10 to-transparent",
+              accent: "from-orange-500/15 via-amber-500/10 to-transparent",
               iconBg: "from-amber-500 to-orange-600",
               icon: (
                 <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -306,7 +306,7 @@ _Sent via Birla Tour & Travels Home Form_`;
               title: "Do Dham Express",
               desc: "Dedicated holy transit connecting Haridwar / Dehradun to Kedarnath Ji and Badrinath Ji.",
               image: "/images/tours/tour_badrinath.jpg",
-              accent: "from-amber-500/25 via-yellow-500/10 to-transparent",
+              accent: "from-amber-500/15 via-yellow-500/10 to-transparent",
               iconBg: "from-orange-500 to-amber-600",
               icon: (
                 <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -318,7 +318,7 @@ _Sent via Birla Tour & Travels Home Form_`;
               title: "Jolly Grant Airport Taxi",
               desc: "24x7 doorstep flight sync transfers from Dehradun Airport to Mussoorie, Rishikesh, and Haridwar.",
               image: "/images/blogs/blog_airport.jpg",
-              accent: "from-blue-500/25 via-indigo-500/10 to-transparent",
+              accent: "from-blue-500/15 via-indigo-500/10 to-transparent",
               iconBg: "from-blue-500 to-indigo-600",
               icon: (
                 <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -330,7 +330,7 @@ _Sent via Birla Tour & Travels Home Form_`;
               title: "VIP Protocol & Security Escorts",
               desc: "Government protocol convoys, dignitary escorts, and executive pilot units across Uttarakhand.",
               image: "/images/vip-escort.jpg",
-              accent: "from-purple-500/25 via-indigo-500/10 to-transparent",
+              accent: "from-purple-500/15 via-indigo-500/10 to-transparent",
               iconBg: "from-purple-500 to-indigo-600",
               icon: (
                 <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -342,7 +342,7 @@ _Sent via Birla Tour & Travels Home Form_`;
               title: "Mussoorie & Dhanaulti Hills",
               desc: "Comfortable scenic family getaways with private chauffeur, luggage assistance, and zero waiting surcharges.",
               image: "/images/tours/tour_mussoorie.jpg",
-              accent: "from-emerald-500/25 via-teal-500/10 to-transparent",
+              accent: "from-emerald-500/15 via-teal-500/10 to-transparent",
               iconBg: "from-emerald-500 to-teal-600",
               icon: (
                 <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -354,7 +354,7 @@ _Sent via Birla Tour & Travels Home Form_`;
               title: "Jim Corbett & Nainital Safari",
               desc: "Safari resort drops, Naini Lake sightseeing, and flexible halts with spacious Toyota Innova Crysta cabs.",
               image: "/images/tours/tour_corbett.jpg",
-              accent: "from-green-500/25 via-emerald-500/10 to-transparent",
+              accent: "from-green-500/15 via-emerald-500/10 to-transparent",
               iconBg: "from-green-600 to-emerald-700",
               icon: (
                 <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -366,48 +366,46 @@ _Sent via Birla Tour & Travels Home Form_`;
             <div
               key={i}
               onClick={() => handleOpenBooking(item.title)}
-              className="relative p-6 sm:p-7 rounded-2xl bg-[#141414]/90 backdrop-blur-2xl text-white border border-stone-800/90 shadow-[0_15px_40px_rgba(0,0,0,0.45)] hover:border-orange-500/70 hover:shadow-[0_20px_50px_rgba(242,107,69,0.3),0_0_30px_rgba(242,107,69,0.2)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer group overflow-hidden"
+              className="relative p-6 sm:p-7 rounded-3xl bg-white/75 backdrop-blur-xl text-stone-900 border border-stone-200/90 shadow-[0_10px_35px_-5px_rgba(0,0,0,0.06)] hover:border-orange-500/60 hover:shadow-[0_20px_45px_-10px_rgba(242,107,69,0.22)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer group overflow-hidden"
             >
-              {/* Luminous Top-Left Ambient Glow */}
-              <div className="absolute top-0 left-0 w-36 h-36 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-tl-2xl" />
+              {/* Subtle Warm Highlight Corner */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-tr-3xl" />
 
               {/* Light-fade Translucent Scenic Background Image */}
-              <div className="absolute inset-0 z-0 pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-700 ease-out overflow-hidden">
+              <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.08] group-hover:opacity-[0.16] transition-opacity duration-700 ease-out overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover object-center filter saturate-125 scale-100 group-hover:scale-108 transition-transform duration-700 ease-out"
+                  className="object-cover object-center filter saturate-125 scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                {/* Soft atmospheric gradient masks for clear text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/85 to-[#141414]/50" />
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.accent}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
               </div>
 
               {/* Card Foreground Content */}
               <div className="relative z-10 space-y-4">
                 {/* Modern Icon Badge with bright glowing backdrop on hover */}
-                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center text-white shadow-md group-hover:shadow-[0_0_20px_rgba(242,107,69,0.5)] group-hover:scale-105 transition-all duration-300`}>
+                <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center text-white shadow-md group-hover:shadow-[0_4px_16px_rgba(242,107,69,0.35)] group-hover:scale-105 transition-all duration-300`}>
                   {item.icon}
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-base sm:text-lg font-sans font-bold text-white group-hover:text-orange-100 transition-colors tracking-tight">
+                  <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900 group-hover:text-[#f26b45] transition-colors tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-[13px] text-stone-400 leading-relaxed font-sans font-normal line-clamp-3">
+                  <p className="text-xs sm:text-[13px] text-stone-600 leading-relaxed font-sans font-normal">
                     {item.desc}
                   </p>
                 </div>
               </div>
 
               {/* Card Footer CTA */}
-              <div className="relative z-10 pt-4 mt-5 border-t border-stone-800/80 flex items-center justify-between text-xs text-stone-400 group-hover:text-stone-200 transition">
-                <span className="font-sans font-semibold tracking-wider text-[11px] text-[#f26b45] group-hover:text-orange-400 transition-colors uppercase">
+              <div className="relative z-10 pt-4 mt-5 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500 group-hover:text-stone-800 transition">
+                <span className="font-sans font-bold tracking-wider text-[11px] text-[#f26b45] group-hover:text-[#e05a34] transition-colors uppercase">
                   Book Package
                 </span>
-                <div className="w-7 h-7 rounded-full bg-stone-900/90 border border-stone-700 flex items-center justify-center group-hover:border-orange-500/60 group-hover:bg-orange-500/10 transition-all">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <div className="w-7 h-7 rounded-full bg-white border border-stone-300/80 shadow-xs flex items-center justify-center group-hover:border-orange-500/60 group-hover:bg-orange-50 transition-all">
+                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-600 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>
             </div>
