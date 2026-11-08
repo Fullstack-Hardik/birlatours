@@ -1,5 +1,26 @@
 [
   {
+    "id": 101,
+    "title": "Subhash Birla with VIP Toyota Innova Crysta at Harihar Ashram Kankhal",
+    "category": "VIP Chauffeur & Escort",
+    "location": "Kankhal, Haridwar",
+    "image": "/gallery/real_birla_vip_harihar_ashram.jpg"
+  },
+  {
+    "id": 102,
+    "title": "Government Protocol Flag Unit & Toyota Innova Crysta Escort",
+    "category": "Protocol & Dignitary Unit",
+    "location": "Haridwar - Dehradun",
+    "image": "/gallery/real_birla_crysta_flag_escort.jpg"
+  },
+  {
+    "id": 103,
+    "title": "Subhash Birla on Official Duty with Senior Defense Officer",
+    "category": "VIP Security & Protocol",
+    "location": "Uttarakhand Protocol Fleet",
+    "image": "/gallery/real_birla_dignitary_protocol_officer.jpg"
+  },
+  {
     "id": 1,
     "title": "Toyota Innova Crysta Luxury Executive Stance",
     "category": "Luxury Fleet",
