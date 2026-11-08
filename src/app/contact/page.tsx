@@ -1,8 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Clock, Shield, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, ArrowLeft } from 'lucide-react';
+import { InstagramIcon } from '@/components/icons/SocialIcons';
+import Link from 'next/link';
 import Footer from '@/components/Footer';
+import Grainient from '@/components/ui/Grainient';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -40,267 +43,213 @@ _Sent via Birla Tour & Travels Contact Form_`;
   };
 
   return (
-    <div className="relative min-h-screen bg-transparent text-stone-900 selection:bg-stone-200 selection:text-stone-900">
+    <div className="relative min-h-screen text-white selection:bg-orange-500 selection:text-white">
+      {/* Grainient Animated Wave Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <Grainient
+          colors={['#120f17', '#2a0f0a', '#9a3412', '#f97316', '#fed7aa']}
+          angle={55}
+          flow={0.8}
+          silk={0.35}
+          grainAmount={0.08}
+        />
+      </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-16">
         
-        {/* Simple, Clean Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-stone-300 text-[11px] font-bold uppercase tracking-widest text-[#f26b45]">
-            <Phone className="w-3.5 h-3.5" />
-            <span>24x7 Customer Support</span>
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-stone-950 tracking-tight">
-            Get in Touch with Us
-          </h1>
-          <p className="text-stone-600 text-sm sm:text-base">
-            Fill the form below to connect directly on WhatsApp with our dispatch team, or call our direct numbers anytime.
-          </p>
+        {/* Navigation Breadcrumb */}
+        <div className="mb-8 flex items-center justify-between">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-300 hover:text-white transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 text-[#f26b45]" />
+            <span>Back to Home</span>
+          </Link>
+          <a
+            href="https://www.instagram.com/subhash.birla/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-xs font-mono text-stone-300 hover:text-white transition"
+          >
+            <InstagramIcon className="w-4 h-4 text-[#f26b45]" />
+            <span>@subhash.birla</span>
+          </a>
         </div>
 
-        {/* 2-Column Clean Layout: Left Contact Info, Right Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
-          
-          {/* Left Details Panel */}
-          <div className="lg:col-span-5 space-y-6">
+        {/* Minimalist 21st.dev Style Contact Card (Image 1 reference) */}
+        <div className="rounded-3xl bg-[#141414]/90 backdrop-blur-2xl border border-stone-800 shadow-[0_30px_90px_rgba(0,0,0,0.8)] overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
             
-            {/* Quick Contact Card */}
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-300/80 shadow-xs space-y-6">
-              <h2 className="text-xl font-serif font-bold text-stone-950">
-                Direct Contact Details
-              </h2>
+            {/* Left Column: Get in touch */}
+            <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-stone-800/80">
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h1 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight">
+                    Get in touch
+                  </h1>
+                  <p className="text-sm text-stone-400 leading-relaxed">
+                    If you have any questions regarding our Services or need help booking your pilgrimage or airport cab, please fill out the form here. We respond immediately via WhatsApp.
+                  </p>
+                </div>
 
-              <div className="space-y-4">
-                {/* Phone 1 */}
-                <a
-                  href="tel:+919917490721"
-                  className="flex items-center gap-4 p-3.5 rounded-2xl bg-[#EBE8E4] hover:bg-stone-300/50 transition group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-[#f26b45]" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-stone-500 uppercase font-semibold">Primary Desk (Call / WhatsApp)</span>
-                    <p className="text-sm sm:text-base font-mono font-bold text-stone-900 group-hover:text-[#f26b45] transition">
-                      +91 99174 90721
-                    </p>
-                  </div>
-                </a>
+                <div className="space-y-5 pt-4">
+                  {/* Email */}
+                  <a href="mailto:subhashbirla7051@gmail.com" className="flex items-center gap-4 group">
+                    <div className="w-11 h-11 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center shrink-0 group-hover:border-orange-500/50 transition">
+                      <Mail className="w-4 h-4 text-stone-300 group-hover:text-[#f26b45] transition" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-stone-400 block font-medium">Email</span>
+                      <span className="text-sm font-sans font-semibold text-white group-hover:text-[#f26b45] transition">
+                        subhashbirla7051@gmail.com
+                      </span>
+                    </div>
+                  </a>
 
-                {/* Phone 2 */}
-                <a
-                  href="tel:+916397295500"
-                  className="flex items-center gap-4 p-3.5 rounded-2xl bg-[#EBE8E4] hover:bg-stone-300/50 transition group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-[#f26b45]" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-stone-500 uppercase font-semibold">Support Desk 2</span>
-                    <p className="text-sm sm:text-base font-mono font-bold text-stone-900 group-hover:text-[#f26b45] transition">
-                      +91 63972 95500
-                    </p>
-                  </div>
-                </a>
+                  {/* Phone */}
+                  <a href="tel:+919917490721" className="flex items-center gap-4 group">
+                    <div className="w-11 h-11 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center shrink-0 group-hover:border-orange-500/50 transition">
+                      <Phone className="w-4 h-4 text-stone-300 group-hover:text-[#f26b45] transition" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-stone-400 block font-medium">Phone</span>
+                      <span className="text-sm font-sans font-semibold text-white group-hover:text-[#f26b45] transition">
+                        +91 99174 90721 / 63972 95500
+                      </span>
+                    </div>
+                  </a>
 
-                {/* Email */}
-                <a
-                  href="mailto:subhashbirla7051@gmail.com"
-                  className="flex items-center gap-4 p-3.5 rounded-2xl bg-[#EBE8E4] hover:bg-stone-300/50 transition group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-[#f26b45]" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-stone-500 uppercase font-semibold">Official Email</span>
-                    <p className="text-sm font-mono font-bold text-stone-900 group-hover:text-[#f26b45] transition">
-                      subhashbirla7051@gmail.com
-                    </p>
-                  </div>
-                </a>
-
-                {/* Registered Office & GSTIN */}
-                <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#EBE8E4]">
-                  <div className="w-10 h-10 rounded-full bg-stone-950 text-white flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4 text-[#f26b45]" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-xs text-stone-500 uppercase font-semibold">Registered Office &amp; GSTIN</span>
-                    <p className="text-xs text-stone-900 font-medium leading-relaxed">
-                      Vill. Asaf Nagar, NH-334, Roorkee - 247656, Distt. Haridwar (U.K.)
-                    </p>
-                    <p className="text-[11px] font-mono font-bold text-[#f26b45]">
-                      GSTIN: 05AUAPK2728D1Z5
-                    </p>
+                  {/* Address */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center shrink-0">
+                      <MapPin className="w-4 h-4 text-stone-300" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-stone-400 block font-medium">Address</span>
+                      <span className="text-sm font-sans font-medium text-stone-200 block leading-relaxed">
+                        Vill. Asaf Nagar, NH-334, Roorkee - 247656, Distt. Haridwar (Uttarakhand)
+                      </span>
+                      <span className="text-[11px] font-mono text-[#f26b45] font-bold">
+                        GSTIN: 05AUAPK2728D1Z5
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* WhatsApp Quick Trigger */}
-            <div className="bg-[#25D366]/10 border border-[#25D366]/30 p-6 rounded-3xl space-y-3">
-              <div className="flex items-center gap-2 text-emerald-800 font-bold text-sm">
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
-                <span>Instant WhatsApp Chat</span>
+              {/* Instagram footer link */}
+              <div className="pt-8 mt-8 border-t border-stone-800/80">
+                <a
+                  href="https://www.instagram.com/subhash.birla/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-xs text-stone-400 hover:text-[#f26b45] transition"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                  <span>Instagram: @subhash.birla</span>
+                </a>
               </div>
-              <p className="text-xs text-emerald-950 leading-relaxed">
-                Need immediate vehicle availability or photos? Message us directly anytime:
-              </p>
-              <a
-                href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20inquire%20about%20cab%20booking"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#1ebd5b] transition shadow-xs"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Chat on WhatsApp</span>
-              </a>
             </div>
 
-          </div>
-
-          {/* Right Form Panel: Neon Prism 3D Form Card */}
-          <div className="lg:col-span-7 relative rounded-3xl bg-stone-900/95 text-stone-100 p-8 sm:p-10 border border-orange-500/30 shadow-[0_20px_50px_-15px_rgba(242,107,69,0.35),0_0_25px_rgba(242,107,69,0.15)] overflow-hidden backdrop-blur-xl">
-            {/* Ambient Prism Top Bar */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#f26b45] to-transparent opacity-90" />
-            
-            <div className="mb-6 space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#f26b45]/15 text-[#f26b45] border border-[#f26b45]/30 text-[10px] font-bold uppercase tracking-wider mb-2">
-                <Send className="w-3 h-3" />
-                <span>Instant WhatsApp Booking</span>
-              </div>
-              <h2 className="text-2xl font-serif font-bold text-white tracking-tight">
-                Book a Cab / Send Enquiry
-              </h2>
-              <p className="text-xs text-stone-400">
-                Fill this quick form. Upon submission, it will automatically open your WhatsApp with your details pre-formatted.
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Right Column: Clean Dark Form (Exact Image 1 layout) */}
+            <div className="lg:col-span-7 p-8 sm:p-12">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
-                    Full Name *
-                  </label>
+                  <label className="text-xs font-semibold text-stone-300">Name</label>
                   <input
                     type="text"
                     required
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="e.g. Amit Sharma"
-                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
+                    placeholder="Your Full Name"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0d0d0d] border border-stone-800 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-stone-500 transition"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="e.g. 9917490721"
-                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
-                    Email Address
-                  </label>
+                  <label className="text-xs font-semibold text-stone-300">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="e.g. amit@gmail.com"
-                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
+                    placeholder="your.email@example.com"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0d0d0d] border border-stone-800 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-stone-500 transition"
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
-                    Travel Date
-                  </label>
-                  <input
-                    type="date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
-                  />
-                </div>
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-stone-300">Phone</label>
+                    <input
+                      type="tel"
+                      required
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+91 99174 90721"
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d0d0d] border border-stone-800 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-stone-500 transition"
+                    />
+                  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
-                    Pickup Location *
-                  </label>
-                  <select
-                    name="pickup"
-                    value={formData.pickup}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
-                  >
-                    <option value="Haridwar Railway Station">Haridwar Railway Station</option>
-                    <option value="Dehradun Airport (Jolly Grant)">Dehradun Airport (Jolly Grant)</option>
-                    <option value="Dehradun City / ISBT">Dehradun City / ISBT</option>
-                    <option value="Rishikesh">Rishikesh</option>
-                    <option value="Delhi NCR">Delhi NCR</option>
-                    <option value="Other">Other Location</option>
-                  </select>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-stone-300">Pickup</label>
+                    <select
+                      name="pickup"
+                      value={formData.pickup}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d0d0d] border border-stone-800 text-sm text-white focus:outline-none focus:border-stone-500 transition"
+                    >
+                      <option value="Haridwar Railway Station">Haridwar Railway Station</option>
+                      <option value="Dehradun Airport (Jolly Grant)">Dehradun Airport (Jolly Grant)</option>
+                      <option value="Roorkee NH-334">Roorkee NH-334</option>
+                      <option value="Dehradun City / ISBT">Dehradun City / ISBT</option>
+                      <option value="Rishikesh">Rishikesh</option>
+                      <option value="Delhi NCR">Delhi NCR</option>
+                      <option value="Other">Other Location</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
-                    Destination / Tour Route *
-                  </label>
+                  <label className="text-xs font-semibold text-stone-300">Destination / Tour</label>
                   <input
                     type="text"
                     required
                     name="destination"
                     value={formData.destination}
                     onChange={handleChange}
-                    placeholder="e.g. Kedarnath & Badrinath, Mussoorie"
-                    className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
+                    placeholder="Char Dham, Kedarnath, Badrinath, Mussoorie, etc."
+                    className="w-full px-4 py-3 rounded-xl bg-[#0d0d0d] border border-stone-800 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-stone-500 transition"
                   />
                 </div>
-              </div>
 
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-stone-300">
-                  Requirements / Notes
-                </label>
-                <textarea
-                  rows={3}
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Number of passengers, luggage, one-way or round-trip..."
-                  className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
-                />
-              </div>
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-stone-300">Message</label>
+                  <textarea
+                    rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your travel dates, passenger count, or questions..."
+                    className="w-full px-4 py-3 rounded-xl bg-[#0d0d0d] border border-stone-800 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-stone-500 transition resize-none"
+                  />
+                </div>
 
-              <button
-                type="submit"
-                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_10px_25px_-5px_rgba(16,185,129,0.4)] active:scale-[0.99]"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Submit &amp; Open in WhatsApp</span>
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="w-full py-3.5 rounded-xl bg-white hover:bg-stone-200 text-stone-950 font-bold text-sm tracking-wide transition shadow-md active:scale-[0.99] flex items-center justify-center gap-2"
+                >
+                  <Send className="w-4 h-4 text-stone-950" />
+                  <span>Submit</span>
+                </button>
+              </form>
+            </div>
+
           </div>
-
         </div>
-
       </div>
 
       <Footer />

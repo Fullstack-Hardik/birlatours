@@ -17,7 +17,8 @@ import {
   MessageCircle,
   MapPin,
   ShieldCheck,
-  ChevronRight
+  ChevronRight,
+  Award
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -45,6 +46,7 @@ const Navbar = () => {
     { name: 'Home', href: '/', icon: Home },
     { name: 'Tours & Yatra', href: '/tours', icon: Compass },
     { name: 'Gallery', href: '/gallery', icon: Images },
+    { name: 'Reviews', href: '/reviews', icon: Award },
     { name: 'FAQs', href: '/faqs', icon: HelpCircle },
     { name: 'Travel Blogs', href: '/blogs', icon: BookOpen },
     { name: 'Contact', href: '/contact', icon: PhoneCall },
@@ -56,24 +58,24 @@ const Navbar = () => {
         {/* Subtle Prism Rainbow Line on top edge */}
         <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#f26b45] to-transparent opacity-75" />
 
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 h-20">
+        <div className="w-full flex items-center justify-between px-3 sm:px-6 h-20">
           
-          {/* Brand Logo with User Uploaded Custom Logo - Increased Size */}
-          <Link href="/" className="inline-flex items-center gap-3.5 group">
-            <div className="relative w-16 h-14 sm:w-20 sm:h-16 shrink-0">
+          {/* Brand Logo with User Uploaded Custom Logo - Shifted Left & Increased Size */}
+          <Link href="/" className="inline-flex items-center gap-3 group pl-0 sm:pl-1">
+            <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0">
               <Image
                 src="/logo.png"
                 alt="Birla Tour & Travels Logo"
                 fill
                 priority
-                className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+                className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
               />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-serif tracking-widest text-xl sm:text-2xl font-bold text-stone-950">
+              <span className="font-serif tracking-widest text-2xl sm:text-3xl font-extrabold text-stone-950">
                 BIRLA
               </span>
-              <span className="text-[11px] font-bold tracking-wider text-[#f26b45] uppercase font-mono">
+              <span className="text-[11px] font-bold tracking-widest text-[#f26b45] uppercase font-mono">
                 Tour &amp; Travels
               </span>
             </div>
@@ -101,11 +103,11 @@ const Navbar = () => {
             })}
           </div>
 
-          {/* Quick Phone CTAs */}
+          {/* Quick Phone CTAs with Rainbow Border Book Cab */}
           <div className="hidden sm:flex items-center gap-3">
             <a
               href="tel:+919917490721"
-              className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-sm text-xs font-mono font-bold text-stone-800 hover:bg-white hover:border-[#f26b45]/40 transition shadow-2xs"
+              className="hidden xl:flex items-center gap-2 px-3.5 py-2.5 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-sm text-xs font-mono font-bold text-stone-800 hover:bg-white hover:border-[#f26b45]/40 transition shadow-2xs"
             >
               <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
               <span>9917490721</span>
@@ -114,10 +116,12 @@ const Navbar = () => {
               href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20book%20a%20cab"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white text-xs font-semibold uppercase tracking-wider transition shadow-[0_4px_15px_-3px_rgba(16,185,129,0.4)]"
+              className="rainbow-border-btn"
             >
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span>Book Cab</span>
+              <div className="rainbow-border-btn-inner !py-2 !px-4">
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Book Cab</span>
+              </div>
             </a>
           </div>
 

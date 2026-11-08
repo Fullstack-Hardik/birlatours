@@ -21,6 +21,7 @@ import {
 import HeroCarousel from '@/components/HeroCarousel';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
+import GradientText from '@/components/ui/GradientText';
 
 export default function CraftWoodApp() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -187,12 +188,19 @@ _Sent via Birla Tour & Travels Home Form_`;
               </span>
             </div>
 
-            {/* Clean, Stable Headline with Gold/Orange Accent */}
-            <div className="space-y-1">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-stone-950 tracking-tight leading-[1.12]">
-                Birla Tour &amp; Travels
+            {/* Clean, Stable Headline with GradientText */}
+            <div className="space-y-1.5">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-extrabold text-stone-950 tracking-tight leading-[1.08]">
+                <GradientText
+                  colors={['#1c1917', '#ea580c', '#f97316', '#c2410c', '#1c1917']}
+                  animationSpeed={5}
+                  variant="flow"
+                  glow={0.3}
+                >
+                  Birla Tour &amp; Travels
+                </GradientText>
               </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-serif text-[#f26b45] italic">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-serif text-[#f26b45] italic font-medium">
                 Luxury Cabs &amp; Char Dham Yatra
               </p>
             </div>
@@ -206,15 +214,17 @@ _Sent via Birla Tour & Travels Home Form_`;
               <button
                 type="button"
                 onClick={() => handleOpenBooking('General Tour / Cab Booking')}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-[0_4px_15px_-3px_rgba(16,185,129,0.4)] group active:scale-95"
+                className="rainbow-border-btn cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>Book Cab on WhatsApp</span>
+                <div className="rainbow-border-btn-inner">
+                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                  <span>Book Cab on WhatsApp</span>
+                </div>
               </button>
 
               <a
                 href="tel:+919917490721"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-stone-900 text-[#F5F2EF] text-xs font-bold uppercase tracking-wider hover:bg-stone-800 transition-all shadow-md active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-stone-900 text-[#F5F2EF] text-xs font-bold uppercase tracking-wider hover:bg-stone-800 transition-all shadow-md active:scale-95"
               >
                 <Phone className="w-4 h-4 text-[#f26b45]" />
                 <span>Call 9917490721</span>
@@ -229,26 +239,28 @@ _Sent via Birla Tour & Travels Home Form_`;
               </Link>
             </div>
 
-            {/* Quick Contact & Verification Badges */}
-            <div className="pt-6 border-t border-stone-300/70 grid grid-cols-2 gap-6 max-w-md">
-              <div className="space-y-1">
-                <span className="text-xs uppercase font-bold tracking-wider text-emerald-700 flex items-center gap-1.5 font-mono">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  Verified Cabs
-                </span>
-                <p className="text-xs text-stone-600 font-sans">
-                  Toyota Innova Crysta &amp; Veteran Mountain Chauffeurs
-                </p>
+            {/* Clean Neomorphic Status Bar (Image 2 Apple UI inspired) */}
+            <div className="pt-6 border-t border-stone-300/70 grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-lg">
+              <div className="p-3.5 rounded-2xl bg-white/80 backdrop-blur-md border border-stone-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-[#f26b45]" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-stone-900 block leading-tight">Verified Fleet</span>
+                  <p className="text-[11px] text-stone-500 mt-0.5">Toyota Innova Crysta &amp; Mountain Drivers</p>
+                </div>
               </div>
 
-              <div className="space-y-1">
-                <span className="text-xs uppercase font-bold tracking-wider text-stone-900 flex items-center gap-1.5 font-mono">
-                  <Phone className="w-4 h-4 text-[#f26b45]" />
-                  24x7 Helpdesk
-                </span>
-                <p className="text-xs font-mono font-bold text-stone-900">
-                  9917490721 / 6397295500
-                </p>
+              <div className="p-3.5 rounded-2xl bg-white/80 backdrop-blur-md border border-stone-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5 text-emerald-600" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-stone-900 block leading-tight">24x7 Helpdesk</span>
+                  <a href="tel:+919917490721" className="text-[11px] font-mono font-bold text-stone-800 hover:text-[#f26b45] transition block mt-0.5">
+                    9917490721 · 6397295500
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -261,73 +273,110 @@ _Sent via Birla Tour & Travels Home Form_`;
         </div>
       </section>
 
-      {/* SERVICES & TOUR PACKAGES SECTION */}
+      {/* SERVICES & FEATURES SECTION - Modern Apple UI Card Design (Image 2 style) */}
       <section id="services" className="py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto border-t border-stone-300/60">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div className="space-y-2">
-            <span className="text-xs font-bold tracking-widest uppercase text-stone-500">
-              Our Services
+            <span className="text-xs font-bold tracking-widest uppercase text-stone-500 font-mono">
+              Services &amp; Capabilities
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-950 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-stone-950 tracking-tight">
               Uttarakhand Travel Services
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-stone-600 max-w-md">
-            Clean cars and courteous chauffeurs for pilgrimages, airport transfers, and hill vacations.
+          <p className="text-sm text-stone-600 max-w-md leading-relaxed">
+            Pristine luxury Toyota Innova Crysta cabs and certified local mountain chauffeurs for sacred Himalayan yatras and airport transfers.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, idx) => (
+        {/* 6 Grid Apple-Inspired Service Cards (Replicating Image 2 format) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              icon: (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+              ),
+              iconBg: "from-blue-500 to-indigo-600",
+              title: "Char Dham Yatra Circuit",
+              desc: "Complete 10-day pilgrimage to Yamunotri, Gangotri, Kedarnath & Badrinath with hill-tested chauffeurs."
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 3L2 12H5V20H19V12H22L12 3ZM12 8.75C13.24 8.75 14.25 9.76 14.25 11C14.25 12.24 13.24 13.25 12 13.25C10.76 13.25 9.75 12.24 9.75 11C9.75 9.76 10.76 8.75 12 8.75Z" />
+                </svg>
+              ),
+              iconBg: "from-orange-500 to-amber-600",
+              title: "Do Dham Express",
+              desc: "Dedicated holy transit connecting Haridwar / Dehradun to Kedarnath Ji and Badrinath Ji."
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21 16V14L13 9V3.5C13 2.67 12.33 2 11.5 2C10.67 2 10 2.67 10 3.5V9L2 14V16L10 13.5V19L8 20.5V22L11.5 21L15 22V20.5L13 19V13.5L21 16Z" />
+                </svg>
+              ),
+              iconBg: "from-pink-500 to-rose-600",
+              title: "Jolly Grant Airport Taxi",
+              desc: "24x7 doorstep flight sync transfers from Dehradun Airport to Mussoorie, Rishikesh, and Haridwar."
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 16.11 15.72 19.78 12 20.93V12H5V6.3L12 3.19V11.99Z" />
+                </svg>
+              ),
+              iconBg: "from-cyan-500 to-blue-600",
+              title: "VIP Protocol & Security Escorts",
+              desc: "Government protocol convoys, dignitary escorts, and executive pilot units across Uttarakhand."
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14 6L10.25 11L13.1 14.8L11.5 16C9.9 14.1 6.5 9.5 6.5 9.5L2 16H22L14 6Z" />
+                </svg>
+              ),
+              iconBg: "from-red-500 to-amber-500",
+              title: "Mussoorie & Dhanaulti Hills",
+              desc: "Comfortable scenic family getaways with private chauffeur, luggage assistance, and zero waiting surcharges."
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6.01L3 12V20C3 20.55 3.45 21 4 21H5C5.55 21 6 20.55 6 20V19H18V20C18 20.55 18.45 21 19 21H20C20.55 21 21 20.55 21 20V12L18.92 6.01ZM6.5 16C5.67 16 5 15.33 5 14.5C5 13.67 5.67 13 6.5 13C7.33 13 8 13.67 8 14.5C8 15.33 7.33 16 6.5 16ZM17.5 16C16.67 16 16 15.33 16 14.5C16 13.67 16.67 13 17.5 13C18.33 13 19 13.67 19 14.5C19 15.33 18.33 16 17.5 16ZM5 11L6.5 6.5H17.5L19 11H5Z" />
+                </svg>
+              ),
+              iconBg: "from-emerald-500 to-teal-600",
+              title: "Jim Corbett & Nainital Safari",
+              desc: "Safari resort drops, Naini Lake sightseeing, and flexible halts with spacious Toyota Innova Crysta cabs."
+            }
+          ].map((item, i) => (
             <div
-              key={idx}
-              className="bg-white rounded-3xl border border-stone-300/70 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              key={i}
+              onClick={() => handleOpenBooking(item.title)}
+              className="p-7 rounded-3xl bg-[#141414] text-white border border-stone-800 shadow-[0_20px_40px_rgba(0,0,0,0.35)] hover:border-orange-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
             >
-              <div>
-                <div className="relative aspect-[16/10] w-full bg-stone-100 overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+              <div className="space-y-5">
+                {/* Modern Icon Badge */}
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                  <span>{item.icon}</span>
                 </div>
 
-                <div className="p-6 sm:p-8 space-y-3">
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-950 group-hover:text-[#f26b45] transition-colors">
-                    {service.title}
+                <div className="space-y-2">
+                  <h3 className="text-lg font-sans font-bold text-white group-hover:text-[#f26b45] transition">
+                    {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                    {service.desc}
+                  <p className="text-xs sm:text-sm text-stone-400 leading-relaxed font-sans">
+                    {item.desc}
                   </p>
-                  <ul className="space-y-1.5 text-xs text-stone-700 pt-2">
-                    {service.features.map((f, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
 
-              <div className="p-6 sm:p-8 pt-0 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => handleOpenBooking(service.title)}
-                  className="flex-1 py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-xs hover:shadow-md"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Book on WhatsApp</span>
-                </button>
-                <a
-                  href="tel:+919917490721"
-                  className="py-3 px-5 rounded-full bg-[#EBE8E4] hover:bg-stone-300 text-stone-900 font-bold text-xs uppercase tracking-wider transition flex items-center gap-1.5"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
-                  <span>Call</span>
-                </a>
+              <div className="pt-6 mt-6 border-t border-stone-800/80 flex items-center justify-between text-xs text-stone-400 group-hover:text-white transition">
+                <span className="font-semibold uppercase tracking-wider text-[11px] text-[#f26b45]">Book Package</span>
+                <ArrowUpRight className="w-4 h-4 text-stone-500 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </div>
           ))}
@@ -358,29 +407,30 @@ _Sent via Birla Tour & Travels Home Form_`;
           {fleetLineup.map((car, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl border border-stone-300/70 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow"
+              className="bg-[#141414] text-white rounded-3xl border border-stone-800 overflow-hidden flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.35)] hover:border-orange-500/40 hover:-translate-y-1 transition-all duration-300 group"
             >
               <div>
-                <div className="relative aspect-[16/10] w-full bg-stone-100 overflow-hidden">
+                <div className="relative aspect-[16/10] w-full bg-stone-900 overflow-hidden">
                   <Image
                     src={car.image}
                     alt={car.title}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-80" />
                 </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-lg font-serif font-bold text-stone-950">
+                <div className="p-6 sm:p-7 space-y-3">
+                  <h3 className="text-xl font-sans font-bold text-white group-hover:text-[#f26b45] transition">
                     {car.title}
                   </h3>
-                  <p className="text-xs text-stone-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-stone-400 leading-relaxed font-sans">
                     {car.desc}
                   </p>
-                  <div className="pt-2 border-t border-stone-200 space-y-1">
+                  <div className="pt-3 border-t border-stone-800/80 space-y-1.5">
                     {car.specs.map((sp, i) => (
-                      <div key={i} className="text-xs text-stone-700 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#f26b45]" />
+                      <div key={i} className="text-xs text-stone-300 flex items-center gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                         <span>{sp}</span>
                       </div>
                     ))}
@@ -388,14 +438,14 @@ _Sent via Birla Tour & Travels Home Form_`;
                 </div>
               </div>
 
-              <div className="p-6 pt-0">
+              <div className="p-6 sm:p-7 pt-0">
                 <button
                   type="button"
                   onClick={() => handleOpenBooking(`Vehicle Booking: ${car.title}`)}
-                  className="w-full py-2.5 rounded-full bg-[#EBE8E4] hover:bg-emerald-600 hover:text-white text-stone-900 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2"
+                  className="w-full py-3 rounded-xl bg-white hover:bg-stone-200 text-stone-950 font-bold text-xs uppercase tracking-wider transition-all shadow-sm active:scale-95 flex items-center justify-center gap-2"
                 >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>Inquire on WhatsApp</span>
+                  <MessageCircle className="w-4 h-4 text-emerald-600" />
+                  <span>Reserve Cab</span>
                 </button>
               </div>
             </div>
