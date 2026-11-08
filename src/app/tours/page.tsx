@@ -5,7 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, MapPin, CheckCircle2, Car, MessageCircle, Calendar } from 'lucide-react';
 import Footer from '@/components/Footer';
-import BookingModal from '@/components/BookingModal';
+import dynamic from 'next/dynamic';
+
+const BookingModal = dynamic(() => import('@/components/BookingModal'), {
+  ssr: false,
+});
 
 const tourPackages = [
   {

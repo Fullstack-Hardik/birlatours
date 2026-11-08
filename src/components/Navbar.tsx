@@ -128,7 +128,9 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden flex items-center justify-center w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-sm text-stone-900 border border-stone-300/80 shadow-xs active:scale-95 transition-transform"
-            aria-label="Toggle Navigation"
+            aria-label={isOpen ? "Close main navigation menu" : "Open main navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation-drawer"
           >
             {isOpen ? <X className="w-5 h-5 text-stone-900" /> : <Menu className="w-5 h-5 text-stone-900" />}
           </button>
@@ -137,11 +139,15 @@ const Navbar = () => {
 
       {/* Modern Slide-over Sidebar for Mobile View with Backdrop */}
       <div 
+        id="mobile-navigation-drawer"
         className={`fixed inset-0 z-50 lg:hidden bg-stone-950/60 backdrop-blur-xs transition-opacity duration-300 ease-in-out ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsOpen(false)}
         aria-hidden={!isOpen}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Navigation"
       >
         {/* Slide-in Drawer Container */}
         <div 

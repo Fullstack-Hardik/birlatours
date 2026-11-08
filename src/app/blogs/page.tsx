@@ -5,7 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BookOpen, Calendar, Clock, ArrowRight, MapPin, Phone, Car, MessageCircle, CheckCircle2, ChevronRight } from 'lucide-react';
 import Footer from '@/components/Footer';
-import BookingModal from '@/components/BookingModal';
+import dynamic from 'next/dynamic';
+
+const BookingModal = dynamic(() => import('@/components/BookingModal'), {
+  ssr: false,
+});
 
 const blogPosts = [
   {

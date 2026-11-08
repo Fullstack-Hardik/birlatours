@@ -114,33 +114,33 @@ export default function HeroCarousel({ slides = defaultSlides }: HeroCarouselPro
           );
         })}
 
-        {/* Carousel Arrows */}
+        {/* Carousel Arrows (44x44px accessible touch targets) */}
         <button
           onClick={prevSlide}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-stone-900/70 hover:bg-stone-900 text-white flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/20"
-          aria-label="Previous slide"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-stone-900/80 hover:bg-stone-900 text-white flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/20 cursor-pointer shadow-md active:scale-95"
+          aria-label="Previous carousel image"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-stone-900/70 hover:bg-stone-900 text-white flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/20"
-          aria-label="Next slide"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-stone-900/80 hover:bg-stone-900 text-white flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/20 cursor-pointer shadow-md active:scale-95"
+          aria-label="Next carousel image"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
 
         {/* Pagination Dots */}
-        <div className="absolute bottom-4 right-6 z-20 flex items-center gap-1.5 bg-stone-950/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+        <div className="absolute bottom-4 right-6 z-20 flex items-center gap-2 bg-stone-950/60 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/10">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === current ? 'w-6 bg-[#f26b45]' : 'w-1.5 bg-white/50 hover:bg-white/80'
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                i === current ? 'w-6 bg-[#f26b45]' : 'w-2 bg-white/50 hover:bg-white/80'
               }`}
-              aria-label={`Slide ${i + 1}`}
+              aria-label={`Go to carousel slide ${i + 1}`}
             />
           ))}
         </div>

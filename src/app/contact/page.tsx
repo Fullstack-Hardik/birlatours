@@ -156,8 +156,11 @@ _Sent via Birla Tour & Travels Contact Form_`;
             <div className="lg:col-span-7 p-8 sm:p-12">
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-stone-300">Name</label>
+                  <label htmlFor="contact-name" className="text-xs font-semibold text-stone-300">
+                    Name
+                  </label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
                     name="name"
@@ -169,8 +172,11 @@ _Sent via Birla Tour & Travels Contact Form_`;
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-stone-300">Email</label>
+                  <label htmlFor="contact-email" className="text-xs font-semibold text-stone-300">
+                    Email
+                  </label>
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -182,8 +188,11 @@ _Sent via Birla Tour & Travels Contact Form_`;
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-stone-300">Phone</label>
+                    <label htmlFor="contact-phone" className="text-xs font-semibold text-stone-300">
+                      Phone
+                    </label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       required
                       name="phone"
@@ -195,8 +204,11 @@ _Sent via Birla Tour & Travels Contact Form_`;
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-stone-300">Pickup</label>
+                    <label htmlFor="contact-pickup" className="text-xs font-semibold text-stone-300">
+                      Pickup
+                    </label>
                     <select
+                      id="contact-pickup"
                       name="pickup"
                       value={formData.pickup}
                       onChange={handleChange}
@@ -214,8 +226,11 @@ _Sent via Birla Tour & Travels Contact Form_`;
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-stone-300">Destination / Tour</label>
+                  <label htmlFor="contact-destination" className="text-xs font-semibold text-stone-300">
+                    Destination / Tour
+                  </label>
                   <input
+                    id="contact-destination"
                     type="text"
                     required
                     name="destination"
@@ -227,8 +242,11 @@ _Sent via Birla Tour & Travels Contact Form_`;
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-stone-300">Message</label>
+                  <label htmlFor="contact-message" className="text-xs font-semibold text-stone-300">
+                    Message
+                  </label>
                   <textarea
+                    id="contact-message"
                     rows={4}
                     name="message"
                     value={formData.message}
@@ -240,7 +258,8 @@ _Sent via Birla Tour & Travels Contact Form_`;
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-white hover:bg-stone-200 text-stone-950 font-bold text-sm tracking-wide transition shadow-md active:scale-[0.99] flex items-center justify-center gap-2"
+                  aria-label="Submit contact and booking inquiry"
+                  className="w-full py-3.5 rounded-xl bg-white hover:bg-stone-200 text-stone-950 font-bold text-sm tracking-wide transition shadow-md active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-4 h-4 text-stone-950" />
                   <span>Submit</span>

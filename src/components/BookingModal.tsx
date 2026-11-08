@@ -85,9 +85,12 @@ _Sent via Birla Tour & Travels Website_`;
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div className="space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-300">Your Name *</label>
+              <label htmlFor="modal-name" className="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+                Your Name *
+              </label>
               <div className="relative">
                 <input
+                  id="modal-name"
                   type="text"
                   required
                   placeholder="e.g. Rahul Sharma"
@@ -100,9 +103,12 @@ _Sent via Birla Tour & Travels Website_`;
             </div>
 
             <div className="space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-300">Phone Number *</label>
+              <label htmlFor="modal-phone" className="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+                Phone Number *
+              </label>
               <div className="relative">
                 <input
+                  id="modal-phone"
                   type="tel"
                   required
                   placeholder="e.g. 9917490721"
@@ -117,9 +123,12 @@ _Sent via Birla Tour & Travels Website_`;
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div className="space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-300">Pickup Location *</label>
+              <label htmlFor="modal-pickup" className="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+                Pickup Location *
+              </label>
               <div className="relative">
                 <select
+                  id="modal-pickup"
                   value={pickup}
                   onChange={(e) => setPickup(e.target.value)}
                   className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
@@ -136,8 +145,11 @@ _Sent via Birla Tour & Travels Website_`;
             </div>
 
             <div className="space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-300">Destination / Tour *</label>
+              <label htmlFor="modal-destination" className="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+                Destination / Tour *
+              </label>
               <input
+                id="modal-destination"
                 type="text"
                 required
                 placeholder="Char Dham, Kedarnath, Mussoorie, etc."
@@ -150,9 +162,12 @@ _Sent via Birla Tour & Travels Website_`;
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div className="space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-300">Travel Date</label>
+              <label htmlFor="modal-date" className="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+                Travel Date
+              </label>
               <div className="relative">
                 <input
+                  id="modal-date"
                   type="date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
@@ -163,9 +178,12 @@ _Sent via Birla Tour & Travels Website_`;
             </div>
 
             <div className="space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-stone-300">Passengers / Cab</label>
+              <label htmlFor="modal-passengers" className="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+                Passengers / Cab
+              </label>
               <div className="relative">
                 <select
+                  id="modal-passengers"
                   value={passengers}
                   onChange={(e) => setPassengers(e.target.value)}
                   className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
@@ -181,8 +199,11 @@ _Sent via Birla Tour & Travels Website_`;
           </div>
 
           <div className="space-y-1">
-            <label className="text-[11px] font-bold uppercase tracking-wider text-stone-300">Any Special Notes (Optional)</label>
+            <label htmlFor="modal-notes" className="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+              Any Special Notes (Optional)
+            </label>
             <textarea
+              id="modal-notes"
               rows={2}
               placeholder="e.g. Flight number, luggage count, elderly passengers..."
               value={notes}
@@ -193,7 +214,8 @@ _Sent via Birla Tour & Travels Website_`;
 
           <button
             type="submit"
-            className="w-full py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_10px_25px_-5px_rgba(16,185,129,0.4)] active:scale-[0.99]"
+            aria-label="Send booking details via WhatsApp"
+            className="w-full py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_10px_25px_-5px_rgba(16,185,129,0.4)] active:scale-[0.99] cursor-pointer"
           >
             <MessageCircle className="w-4 h-4" />
             <span>Send Details via WhatsApp</span>

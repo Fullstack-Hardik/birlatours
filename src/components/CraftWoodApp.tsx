@@ -20,8 +20,12 @@ import {
 } from 'lucide-react';
 import HeroCarousel from '@/components/HeroCarousel';
 import Footer from '@/components/Footer';
-import BookingModal from '@/components/BookingModal';
+import dynamic from 'next/dynamic';
 import GradientText from '@/components/ui/GradientText';
+
+const BookingModal = dynamic(() => import('@/components/BookingModal'), {
+  ssr: false,
+});
 
 export default function CraftWoodApp() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -610,8 +614,11 @@ _Sent via Birla Tour & Travels Home Form_`;
             <form onSubmit={handleHomeFormSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Full Name *</label>
+                  <label htmlFor="home-form-name" className="text-xs font-bold uppercase tracking-wider text-stone-300">
+                    Full Name *
+                  </label>
                   <input
+                    id="home-form-name"
                     type="text"
                     required
                     placeholder="e.g. Rahul Sharma"
@@ -622,8 +629,11 @@ _Sent via Birla Tour & Travels Home Form_`;
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Mobile Number *</label>
+                  <label htmlFor="home-form-phone" className="text-xs font-bold uppercase tracking-wider text-stone-300">
+                    Mobile Number *
+                  </label>
                   <input
+                    id="home-form-phone"
                     type="tel"
                     required
                     placeholder="e.g. 9917490721"
@@ -636,8 +646,11 @@ _Sent via Birla Tour & Travels Home Form_`;
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Pickup Location *</label>
+                  <label htmlFor="home-form-pickup" className="text-xs font-bold uppercase tracking-wider text-stone-300">
+                    Pickup Location *
+                  </label>
                   <select
+                    id="home-form-pickup"
                     value={homeForm.pickup}
                     onChange={(e) => setHomeForm({ ...homeForm, pickup: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-stone-950/80 border border-stone-700/80 text-xs sm:text-sm text-white focus:outline-none focus:border-[#f26b45] focus:ring-2 focus:ring-[#f26b45]/40 shadow-inner transition-all"
@@ -653,8 +666,11 @@ _Sent via Birla Tour & Travels Home Form_`;
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Destination *</label>
+                  <label htmlFor="home-form-destination" className="text-xs font-bold uppercase tracking-wider text-stone-300">
+                    Destination *
+                  </label>
                   <input
+                    id="home-form-destination"
                     type="text"
                     required
                     placeholder="Char Dham, Kedarnath, Mussoorie, etc."
@@ -666,8 +682,11 @@ _Sent via Birla Tour & Travels Home Form_`;
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold uppercase tracking-wider text-stone-300">Travel Date &amp; Passenger Count</label>
+                <label htmlFor="home-form-details" className="text-xs font-bold uppercase tracking-wider text-stone-300">
+                  Travel Date &amp; Passenger Count
+                </label>
                 <textarea
+                  id="home-form-details"
                   rows={2}
                   placeholder="e.g. Travel on 15th, 5 passengers in Innova Crysta..."
                   value={homeForm.details}
@@ -678,7 +697,8 @@ _Sent via Birla Tour & Travels Home Form_`;
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_10px_25px_-5px_rgba(16,185,129,0.4)] active:scale-[0.99]"
+                aria-label="Send cab inquiry to Birla Tour and Travels via WhatsApp"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_10px_25px_-5px_rgba(16,185,129,0.4)] active:scale-[0.99] cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Send via WhatsApp</span>
