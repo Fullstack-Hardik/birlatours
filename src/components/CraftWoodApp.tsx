@@ -287,94 +287,127 @@ _Sent via Birla Tour & Travels Home Form_`;
           </p>
         </div>
 
-        {/* 6 Grid Apple-Inspired Service Cards (Replicating Image 2 format) */}
+        {/* 6 Grid Apple-Inspired Service Cards with Glassmorphic Translucent Image & Bright Hover Effect */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
+              title: "Char Dham Yatra Circuit",
+              desc: "Complete 10-day pilgrimage to Yamunotri, Gangotri, Kedarnath & Badrinath with hill-tested chauffeurs.",
+              image: "/images/tours/tour_kedarnath.jpg",
+              accent: "from-orange-500/20 via-amber-500/10 to-transparent",
+              iconBg: "from-amber-500 to-orange-600",
               icon: (
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                 </svg>
-              ),
-              iconBg: "from-blue-500 to-indigo-600",
-              title: "Char Dham Yatra Circuit",
-              desc: "Complete 10-day pilgrimage to Yamunotri, Gangotri, Kedarnath & Badrinath with hill-tested chauffeurs."
+              )
             },
             {
+              title: "Do Dham Express",
+              desc: "Dedicated holy transit connecting Haridwar / Dehradun to Kedarnath Ji and Badrinath Ji.",
+              image: "/images/tours/tour_badrinath.jpg",
+              accent: "from-amber-500/20 via-yellow-500/10 to-transparent",
+              iconBg: "from-orange-500 to-amber-600",
               icon: (
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 3L2 12H5V20H19V12H22L12 3ZM12 8.75C13.24 8.75 14.25 9.76 14.25 11C14.25 12.24 13.24 13.25 12 13.25C10.76 13.25 9.75 12.24 9.75 11C9.75 9.76 10.76 8.75 12 8.75Z" />
                 </svg>
-              ),
-              iconBg: "from-orange-500 to-amber-600",
-              title: "Do Dham Express",
-              desc: "Dedicated holy transit connecting Haridwar / Dehradun to Kedarnath Ji and Badrinath Ji."
+              )
             },
             {
+              title: "Jolly Grant Airport Taxi",
+              desc: "24x7 doorstep flight sync transfers from Dehradun Airport to Mussoorie, Rishikesh, and Haridwar.",
+              image: "/images/blogs/blog_airport.jpg",
+              accent: "from-blue-500/20 via-indigo-500/10 to-transparent",
+              iconBg: "from-blue-500 to-indigo-600",
               icon: (
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M21 16V14L13 9V3.5C13 2.67 12.33 2 11.5 2C10.67 2 10 2.67 10 3.5V9L2 14V16L10 13.5V19L8 20.5V22L11.5 21L15 22V20.5L13 19V13.5L21 16Z" />
                 </svg>
-              ),
-              iconBg: "from-pink-500 to-rose-600",
-              title: "Jolly Grant Airport Taxi",
-              desc: "24x7 doorstep flight sync transfers from Dehradun Airport to Mussoorie, Rishikesh, and Haridwar."
+              )
             },
             {
+              title: "VIP Protocol & Security Escorts",
+              desc: "Government protocol convoys, dignitary escorts, and executive pilot units across Uttarakhand.",
+              image: "/images/vip-escort.jpg",
+              accent: "from-purple-500/20 via-indigo-500/10 to-transparent",
+              iconBg: "from-purple-500 to-indigo-600",
               icon: (
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 16.11 15.72 19.78 12 20.93V12H5V6.3L12 3.19V11.99Z" />
                 </svg>
-              ),
-              iconBg: "from-cyan-500 to-blue-600",
-              title: "VIP Protocol & Security Escorts",
-              desc: "Government protocol convoys, dignitary escorts, and executive pilot units across Uttarakhand."
+              )
             },
             {
+              title: "Mussoorie & Dhanaulti Hills",
+              desc: "Comfortable scenic family getaways with private chauffeur, luggage assistance, and zero waiting surcharges.",
+              image: "/images/tours/tour_mussoorie.jpg",
+              accent: "from-emerald-500/20 via-teal-500/10 to-transparent",
+              iconBg: "from-emerald-500 to-teal-600",
               icon: (
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M14 6L10.25 11L13.1 14.8L11.5 16C9.9 14.1 6.5 9.5 6.5 9.5L2 16H22L14 6Z" />
                 </svg>
-              ),
-              iconBg: "from-red-500 to-amber-500",
-              title: "Mussoorie & Dhanaulti Hills",
-              desc: "Comfortable scenic family getaways with private chauffeur, luggage assistance, and zero waiting surcharges."
+              )
             },
             {
+              title: "Jim Corbett & Nainital Safari",
+              desc: "Safari resort drops, Naini Lake sightseeing, and flexible halts with spacious Toyota Innova Crysta cabs.",
+              image: "/images/tours/tour_corbett.jpg",
+              accent: "from-green-500/20 via-emerald-500/10 to-transparent",
+              iconBg: "from-green-600 to-emerald-700",
               icon: (
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6.01L3 12V20C3 20.55 3.45 21 4 21H5C5.55 21 6 20.55 6 20V19H18V20C18 20.55 18.45 21 19 21H20C20.55 21 21 20.55 21 20V12L18.92 6.01ZM6.5 16C5.67 16 5 15.33 5 14.5C5 13.67 5.67 13 6.5 13C7.33 13 8 13.67 8 14.5C8 15.33 7.33 16 6.5 16ZM17.5 16C16.67 16 16 15.33 16 14.5C16 13.67 16.67 13 17.5 13C18.33 13 19 13.67 19 14.5C19 15.33 18.33 16 17.5 16ZM5 11L6.5 6.5H17.5L19 11H5Z" />
                 </svg>
-              ),
-              iconBg: "from-emerald-500 to-teal-600",
-              title: "Jim Corbett & Nainital Safari",
-              desc: "Safari resort drops, Naini Lake sightseeing, and flexible halts with spacious Toyota Innova Crysta cabs."
+              )
             }
           ].map((item, i) => (
             <div
               key={i}
               onClick={() => handleOpenBooking(item.title)}
-              className="p-7 rounded-3xl bg-[#141414] text-white border border-stone-800 shadow-[0_20px_40px_rgba(0,0,0,0.35)] hover:border-orange-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
+              className="relative p-7 rounded-3xl bg-[#131211]/85 backdrop-blur-xl text-white border border-stone-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-orange-500/60 hover:shadow-[0_25px_60px_-10px_rgba(242,107,69,0.35),0_0_35px_rgba(242,107,69,0.2)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer group overflow-hidden"
             >
-              <div className="space-y-5">
-                {/* Modern Icon Badge */}
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                  <span>{item.icon}</span>
+              {/* Subtle Ambient Glow Effect on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              {/* Translucent AI-style scenic background image in glassmorphism */}
+              <div className="absolute inset-0 z-0 pointer-events-none opacity-20 group-hover:opacity-35 transition-opacity duration-700 ease-out overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover object-center filter saturate-150 scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#131211] via-[#131211]/70 to-[#131211]/40" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.accent}`} />
+              </div>
+
+              {/* Card Foreground Content */}
+              <div className="relative z-10 space-y-5">
+                {/* Modern Icon Badge with bright glowing backdrop on hover */}
+                <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center text-white shadow-md group-hover:shadow-[0_0_20px_rgba(242,107,69,0.6)] group-hover:scale-105 transition-all duration-300`}>
+                  {item.icon}
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-sans font-bold text-white group-hover:text-[#f26b45] transition">
+                  <h3 className="text-lg font-serif font-semibold text-stone-100 group-hover:text-white transition-colors tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-stone-400 leading-relaxed font-sans">
+                  <p className="text-xs sm:text-[13px] text-stone-400/90 leading-relaxed font-sans font-normal">
                     {item.desc}
                   </p>
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-stone-800/80 flex items-center justify-between text-xs text-stone-400 group-hover:text-white transition">
-                <span className="font-semibold uppercase tracking-wider text-[11px] text-[#f26b45]">Book Package</span>
-                <ArrowUpRight className="w-4 h-4 text-stone-500 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              {/* Card Footer CTA */}
+              <div className="relative z-10 pt-5 mt-6 border-t border-stone-800/80 flex items-center justify-between text-xs text-stone-400 group-hover:text-stone-200 transition">
+                <span className="font-sans font-semibold tracking-wider text-[11px] text-[#f26b45] group-hover:text-orange-400 transition-colors uppercase">
+                  Book Package
+                </span>
+                <div className="w-7 h-7 rounded-full bg-stone-900/90 border border-stone-700 flex items-center justify-center group-hover:border-orange-500/60 group-hover:bg-orange-500/10 transition-all">
+                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#f26b45] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
               </div>
             </div>
           ))}
