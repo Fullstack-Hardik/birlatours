@@ -60,19 +60,19 @@ const Navbar = () => {
 
         <div className="w-full flex items-center justify-between px-2 sm:px-6 h-18 sm:h-20">
           
-          {/* Brand Logo - Shifted Left, Single Line, Refined Typography */}
-          <Link href="/" className="inline-flex items-center gap-2.5 sm:gap-3 group pl-1 shrink-0">
-            <div className="relative w-12 h-10 sm:w-14 sm:h-12 shrink-0">
+          {/* Brand Logo - Enhanced Prominent Size, Shifted Left */}
+          <Link href="/" className="inline-flex items-center gap-3 group pl-1 shrink-0">
+            <div className="relative w-16 h-14 sm:w-20 sm:h-16 md:w-24 md:h-16 shrink-0 py-0.5">
               <Image
                 src="/logo.png"
                 alt="Birla Tour & Travels Logo"
                 fill
                 priority
-                className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+                className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
               />
             </div>
             {/* Clean Single Line Brand Name */}
-            <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+            <div className="flex items-baseline gap-1.5 whitespace-nowrap hidden sm:flex">
               <span className="font-serif tracking-widest text-lg sm:text-xl font-bold text-stone-950">
                 BIRLA
               </span>
@@ -160,16 +160,16 @@ const Navbar = () => {
           <div>
             <div className="flex items-center justify-between pb-6 border-b border-stone-300/80">
               <div className="flex items-center gap-3">
-                <div className="relative w-12 h-10">
+                <div className="relative w-16 h-14">
                   <Image
                     src="/logo.png"
                     alt="Birla Tour & Travels Logo"
                     fill
-                    className="object-contain"
+                    className="object-contain drop-shadow-sm"
                   />
                 </div>
                 <div>
-                  <span className="font-serif font-bold text-base text-stone-950 block leading-tight">
+                  <span className="font-serif font-bold text-lg text-stone-950 block leading-tight">
                     BIRLA TOURS
                   </span>
                   <span className="text-[10px] font-mono text-[#f26b45] font-semibold uppercase">

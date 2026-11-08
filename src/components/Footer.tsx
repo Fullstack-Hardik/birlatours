@@ -92,20 +92,20 @@ export default function Footer() {
           
           {/* Col 1: Brand & Official Address Info */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-3 group">
-              <div className="relative w-14 h-12 shrink-0">
+            <Link href="/" className="inline-flex items-center gap-3.5 group">
+              <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0">
                 <Image
                   src="/logo.png"
                   alt="Birla Tour & Travels Logo"
                   fill
-                  className="object-contain group-hover:scale-105 transition-transform"
+                  className="object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif tracking-widest text-xl font-bold text-white">
+                <span className="font-serif tracking-widest text-2xl font-bold text-white">
                   BIRLA
                 </span>
-                <span className="text-[10px] font-bold tracking-wider text-[#f26b45] uppercase font-mono">
+                <span className="text-[11px] font-bold tracking-wider text-[#f26b45] uppercase font-mono">
                   Tour &amp; Travels
                 </span>
               </div>
