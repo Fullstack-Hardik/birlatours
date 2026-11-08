@@ -16,6 +16,7 @@ import {
   Compass,
   FileCheck
 } from 'lucide-react';
+import { InstagramIcon } from '@/components/icons/SocialIcons';
 
 export default function Footer() {
   return (
@@ -58,6 +59,15 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/subhash.birla/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white text-xs font-semibold transition border border-stone-700"
+            >
+              <InstagramIcon className="w-4 h-4 text-pink-400" />
+              <span className="hidden sm:inline">Instagram</span>
+            </a>
             <a
               href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20inquire%20about%20a%20cab%20booking"
               target="_blank"
@@ -118,6 +128,17 @@ export default function Footer() {
                   subhashbirla7051@gmail.com
                 </a>
               </div>
+              <div className="flex items-center gap-2.5">
+                <InstagramIcon className="w-4 h-4 text-pink-400 shrink-0" />
+                <a
+                  href="https://www.instagram.com/subhash.birla/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-pink-400 transition"
+                >
+                  Instagram: @subhash.birla
+                </a>
+              </div>
             </div>
           </div>
 
@@ -148,7 +169,13 @@ export default function Footer() {
               <li>
                 <Link href="/blogs" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
                   <ArrowUpRight className="w-3 h-3 text-stone-500" />
-                  <span>Travel Blogs</span>
+                  <span>Blogs</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/reviews" className="hover:text-[#f26b45] transition flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-stone-500" />
+                  <span>Client Reviews &amp; Reels</span>
                 </Link>
               </li>
               <li>

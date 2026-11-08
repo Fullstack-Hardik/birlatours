@@ -5,7 +5,7 @@ import TopAnnouncementBanner from "@/components/TopAnnouncementBanner";
 import ColorBends from "@/components/ui/ColorBends";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://birlatours.com"),
+  metadataBase: new URL("https://birlatourandtravels.com"),
   title: {
     default: "Birla Tour & Travels — Luxury Toyota Innova Crysta Taxi Haridwar, Roorkee & Dehradun",
     template: "%s | Birla Tour & Travels",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Official website of Birla Tour & Travels (GSTIN: 05AUAPK2728D1Z5). Verified luxury Toyota Innova Crysta taxi hire across Haridwar, Roorkee, Dehradun & Char Dham Yatra. Call +91 99174 90721 / 63972 95500.",
   keywords: [
     "Birla Tour and Travels",
+    "birlatourandtravels.com",
     "Taxi Service in Haridwar",
     "Taxi Service in Roorkee",
     "Taxi Service in Dehradun",
@@ -21,9 +22,11 @@ export const metadata: Metadata = {
     "Jolly Grant Airport Taxi",
     "Toyota Innova Crysta Taxi Uttarakhand",
     "Outstation Cab Roorkee Haridwar",
-    "Kedarnath Badrinath Taxi Service"
+    "Kedarnath Badrinath Taxi Service",
+    "Haridwar Railway Station Taxi",
+    "Dehradun to Mussoorie Cab"
   ],
-  authors: [{ name: "Birla Tour & Travels", url: "https://birlatours.com" }],
+  authors: [{ name: "Birla Tour & Travels", url: "https://birlatourandtravels.com" }],
   creator: "Birla Tour & Travels",
   publisher: "Birla Tour & Travels",
   icons: {
@@ -34,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://birlatours.com",
+    url: "https://birlatourandtravels.com",
     siteName: "Birla Tour & Travels",
     title: "Birla Tour & Travels — Luxury Chauffeur Taxi in Uttarakhand",
     description:
@@ -56,7 +59,7 @@ export const metadata: Metadata = {
     images: ["/images/tours/tour_kedarnath.jpg"],
   },
   alternates: {
-    canonical: "https://birlatours.com",
+    canonical: "https://birlatourandtravels.com",
   },
 };
 
@@ -64,11 +67,14 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["TravelAgency", "LocalBusiness"],
   "name": "Birla Tour & Travels",
-  "image": "https://birlatours.com/logo.png",
-  "url": "https://birlatours.com",
+  "image": "https://birlatourandtravels.com/logo.png",
+  "url": "https://birlatourandtravels.com",
   "telephone": ["+919917490721", "+916397295500"],
   "email": "subhashbirla7051@gmail.com",
   "taxID": "05AUAPK2728D1Z5",
+  "sameAs": [
+    "https://www.instagram.com/subhash.birla/"
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Vill. Asaf Nagar, NH-334",
