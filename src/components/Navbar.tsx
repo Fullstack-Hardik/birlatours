@@ -48,7 +48,7 @@ const Navbar = () => {
     { name: 'Gallery', href: '/gallery', icon: Images },
     { name: 'Reviews', href: '/reviews', icon: Award },
     { name: 'FAQs', href: '/faqs', icon: HelpCircle },
-    { name: 'Travel Blogs', href: '/blogs', icon: BookOpen },
+    { name: 'Blogs', href: '/blogs', icon: BookOpen },
     { name: 'Contact', href: '/contact', icon: PhoneCall },
   ];
 
@@ -58,31 +58,32 @@ const Navbar = () => {
         {/* Subtle Prism Rainbow Line on top edge */}
         <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#f26b45] to-transparent opacity-75" />
 
-        <div className="w-full flex items-center justify-between px-3 sm:px-6 h-20">
+        <div className="w-full flex items-center justify-between px-2 sm:px-6 h-18 sm:h-20">
           
-          {/* Brand Logo with User Uploaded Custom Logo - Shifted Left & Increased Size */}
-          <Link href="/" className="inline-flex items-center gap-3 group pl-0 sm:pl-1">
-            <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0">
+          {/* Brand Logo - Shifted Left, Single Line, Refined Typography */}
+          <Link href="/" className="inline-flex items-center gap-2.5 sm:gap-3 group pl-1 shrink-0">
+            <div className="relative w-12 h-10 sm:w-14 sm:h-12 shrink-0">
               <Image
                 src="/logo.png"
                 alt="Birla Tour & Travels Logo"
                 fill
                 priority
-                className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                className="object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
               />
             </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-serif tracking-widest text-2xl sm:text-3xl font-extrabold text-stone-950">
+            {/* Clean Single Line Brand Name */}
+            <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+              <span className="font-serif tracking-widest text-lg sm:text-xl font-bold text-stone-950">
                 BIRLA
               </span>
-              <span className="text-[11px] font-bold tracking-widest text-[#f26b45] uppercase font-mono">
+              <span className="text-[11px] sm:text-xs font-sans font-semibold tracking-wider text-[#f26b45] uppercase">
                 Tour &amp; Travels
               </span>
             </div>
           </Link>
 
           {/* Desktop Links (Pill Bar with Icons) */}
-          <div className="hidden lg:flex items-center gap-1 p-1.5 rounded-full bg-white/70 backdrop-blur-md text-stone-800 border border-stone-300/60 shadow-xs">
+          <div className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-white/80 backdrop-blur-md text-stone-800 border border-stone-200/80 shadow-2xs">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               const IconComponent = link.icon;
@@ -90,24 +91,24 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 ${
                     isActive
-                      ? 'bg-stone-950 text-[#F5F2EF] shadow-[0_2px_10px_rgba(0,0,0,0.15)]'
-                      : 'text-stone-700 hover:text-stone-950 hover:bg-stone-200/50'
+                      ? 'bg-stone-950 text-white shadow-xs font-semibold'
+                      : 'text-stone-700 hover:text-stone-950 hover:bg-stone-100'
                   }`}
                 >
-                  <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-[#f26b45]' : 'text-stone-500'}`} />
+                  <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-[#f26b45]' : 'text-stone-400'}`} />
                   <span>{link.name}</span>
                 </Link>
               );
             })}
           </div>
 
-          {/* Quick Phone CTAs with Rainbow Border Book Cab */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Quick Phone & Classic Book Cab CTA */}
+          <div className="hidden sm:flex items-center gap-2.5 shrink-0">
             <a
               href="tel:+919917490721"
-              className="hidden xl:flex items-center gap-2 px-3.5 py-2.5 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-sm text-xs font-mono font-bold text-stone-800 hover:bg-white hover:border-[#f26b45]/40 transition shadow-2xs"
+              className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-full border border-stone-200 bg-white/90 text-xs font-mono font-semibold text-stone-800 hover:border-stone-400 transition shadow-2xs"
             >
               <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
               <span>9917490721</span>
@@ -116,12 +117,10 @@ const Navbar = () => {
               href="https://wa.me/919917490721?text=Hi%20Birla%20Tours,%20I%20would%20like%20to%20book%20a%20cab"
               target="_blank"
               rel="noreferrer"
-              className="rainbow-border-btn"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-950 hover:bg-stone-800 text-white text-xs font-semibold tracking-wider transition-all shadow-sm hover:shadow-md active:scale-95 group border border-stone-800"
             >
-              <div className="rainbow-border-btn-inner !py-2 !px-4">
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Book Cab</span>
-              </div>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 group-hover:animate-ping" />
+              <span>Book Cab</span>
             </a>
           </div>
 

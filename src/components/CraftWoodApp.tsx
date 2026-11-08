@@ -188,19 +188,19 @@ _Sent via Birla Tour & Travels Home Form_`;
               </span>
             </div>
 
-            {/* Clean, Stable Headline with GradientText */}
-            <div className="space-y-1.5">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-extrabold text-stone-950 tracking-tight leading-[1.08]">
+            {/* Clean, Elegant Headline with GradientText */}
+            <div className="space-y-2">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-stone-950 tracking-tight leading-[1.12]">
                 <GradientText
-                  colors={['#1c1917', '#ea580c', '#f97316', '#c2410c', '#1c1917']}
-                  animationSpeed={5}
+                  colors={['#1c1917', '#c2410c', '#f97316', '#ea580c', '#1c1917']}
+                  animationSpeed={6}
                   variant="flow"
-                  glow={0.3}
+                  glow={0.2}
                 >
                   Birla Tour &amp; Travels
                 </GradientText>
               </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-serif text-[#f26b45] italic font-medium">
+              <p className="text-lg sm:text-xl lg:text-2xl font-serif text-[#f26b45] italic font-normal tracking-wide">
                 Luxury Cabs &amp; Char Dham Yatra
               </p>
             </div>
@@ -214,25 +214,23 @@ _Sent via Birla Tour & Travels Home Form_`;
               <button
                 type="button"
                 onClick={() => handleOpenBooking('General Tour / Cab Booking')}
-                className="rainbow-border-btn cursor-pointer"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-stone-950 hover:bg-stone-800 text-white text-xs font-semibold tracking-wider transition-all shadow-md hover:shadow-lg active:scale-95 group border border-stone-800 cursor-pointer"
               >
-                <div className="rainbow-border-btn-inner">
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
-                  <span>Book Cab on WhatsApp</span>
-                </div>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 group-hover:animate-ping" />
+                <span>Book Cab on WhatsApp</span>
               </button>
 
               <a
                 href="tel:+919917490721"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-stone-900 text-[#F5F2EF] text-xs font-bold uppercase tracking-wider hover:bg-stone-800 transition-all shadow-md active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/90 hover:bg-white text-stone-900 border border-stone-300 text-xs font-semibold tracking-wider transition-all shadow-2xs hover:shadow-sm active:scale-95"
               >
-                <Phone className="w-4 h-4 text-[#f26b45]" />
+                <Phone className="w-3.5 h-3.5 text-[#f26b45]" />
                 <span>Call 9917490721</span>
               </a>
 
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/90 hover:bg-white text-stone-800 border border-stone-300 text-xs font-bold uppercase tracking-wider transition-all shadow-2xs hover:shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-medium tracking-wider transition-all"
               >
                 <span>View Gallery</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-stone-500" />
